@@ -72,7 +72,11 @@
     <section id="devices" class="services section">
       <div class="container">
         <div class="mb-4">
-          <label for="variant-select" class="form-label">Sort by Variant:</label>
+          <label for="search-input" class="form-label">Search Devices:</label>
+          <input type="text" id="search-input" class="form-control" placeholder="Search by Device, OEM, or Maintainer">
+        </div>
+        <div class="mb-4">
+          <label for="variant-select" class="form-label">Filter by Variant:</label>
           <select id="variant-select" class="form-select">
             <option value="ALL">All</option>
             <option value="VANILLA">VANILLA</option>
@@ -94,10 +98,7 @@
       <p>Stay updated with the latest RisingOS builds and supported devices.</p>
       <div class="social-links d-flex justify-content-center">
         <a href="https://t.me/RisingOSRevived"><i class="bi bi-telegram"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/RisingOS-Revived"><i class="bi bi-github"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
@@ -151,7 +152,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/eqs.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/marble.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/mondrian.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/nunch.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/munch.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/oriole.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/raven.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/redwood.json",
@@ -162,15 +163,12 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/wly.json"
     ];
 
-    function formatFileSize(bytes) {
-      const gb = bytes / (1024 ** 3);
-      return gb > 1 ? gb.toFixed(2) + ' GB' : (bytes / (1024 ** 2)).toFixed(2) + ' MB';
-    }
-
     async function fetchAllDevices() {
       const devicesContainer = document.getElementById('device-list');
       devicesContainer.innerHTML = '';
       const selectedVariant = document.getElementById('variant-select').value;
+      const searchQuery = document.getElementById('search-input').value.toLowerCase(); // Capture the search query
+      const deviceMap = {};
 
       for (const url of deviceJsonUrls) {
         try {
@@ -178,33 +176,74 @@
           if (!response.ok) throw new Error(`Failed to fetch: ${url}`);
           const data = await response.json();
           const build = data.response[0];
-
           const variant = url.includes('/VANILLA/') ? 'VANILLA' : url.includes('/CORE/') ? 'CORE' : 'GAPPS';
 
-          if (selectedVariant !== 'ALL' && variant !== selectedVariant) continue;
+          if (!deviceMap[build.device]) {
+            deviceMap[build.device] = { oem: build.oem, builds: {} };
+          }
 
-          const card = document.createElement('div');
-          card.className = 'col-lg-4 col-md-6';
-          card.innerHTML = `
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-phone"></i></div>
-              <h3>${build.device} (${build.oem})</h3>
-              <p><strong>Maintainer:</strong> ${build.maintainer || 'N/A'}</p>
-              <p><strong>Version:</strong> ${build.version || 'N/A'}</p>
-              <p><strong>Build Type:</strong> ${build.buildtype || 'N/A'}</p>
-              <p><strong>Size:</strong> ${formatFileSize(build.size)}</p>
-              <a href="${build.download}" class="stretched-link" target="_blank">Download</a>
-            </div>
-          `;
-
-          devicesContainer.appendChild(card);
+          deviceMap[build.device].builds[variant] = build;
         } catch (error) {
           console.error(error);
         }
       }
+
+      for (const [device, info] of Object.entries(deviceMap)) {
+        // Filter by search query
+        const deviceNameLower = device.toLowerCase();
+        const oemNameLower = info.oem.toLowerCase();
+        const maintainerLower = Object.values(info.builds).map(build => build.maintainer.toLowerCase()).join(' ');
+
+        if (
+          deviceNameLower.includes(searchQuery) ||
+          oemNameLower.includes(searchQuery) ||
+          maintainerLower.includes(searchQuery)
+        ) {
+          const card = document.createElement('div');
+          card.className = 'col-lg-4 col-md-6';
+
+          let buttons = '';
+          for (const [variant, build] of Object.entries(info.builds)) {
+            if (selectedVariant !== 'ALL' && selectedVariant !== variant) continue;
+
+            const size = formatSize(build.size);  // Format the size
+            buttons += `
+              <a href="${build.download}" class="btn btn-outline-success" target="_blank">
+                ${variant} - ${size}
+              </a>
+            `;
+          }
+
+          if (buttons) {
+            card.innerHTML = `
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-phone"></i></div>
+                <h3>${device} (${info.oem})</h3>
+                <p><strong>Maintainer:</strong> ${info.builds[Object.keys(info.builds)[0]].maintainer}</p>
+                <p><strong>Version:</strong> ${info.builds[Object.keys(info.builds)[0]].version}</p>
+                ${buttons}
+              </div>
+            `;
+            devicesContainer.appendChild(card);
+          }
+        }
+      }
+    }
+
+    function formatSize(bytes) {
+      if (bytes >= 1073741824) {
+        return (bytes / 1073741824).toFixed(2) + ' GB';
+      } else if (bytes >= 1048576) {
+        return (bytes / 1048576).toFixed(2) + ' MB';
+      } else if (bytes >= 1024) {
+        return (bytes / 1024).toFixed(2) + ' KB';
+      } else {
+        return bytes + ' B';
+      }
     }
 
     document.getElementById('variant-select').addEventListener('change', fetchAllDevices);
+    document.getElementById('search-input').addEventListener('input', fetchAllDevices);  // Update when typing
     window.onload = fetchAllDevices;
   </script>
 
