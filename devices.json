@@ -13,7 +13,7 @@
         "sha256": "2df119ae8975947459d0f504a7793f3cb93e33d479b0b7bdfc74719e8f573e94"
     },
     {
-        "oem": "",
+        "oem": "Xiaomi",
         "device": "Mi 9",
         "codename": "cepheus",
         "maintainer": "tribual",
@@ -65,7 +65,7 @@
         "sha256": "662b457ba3c2b6f070c0fd527f4a3e10a6cb7cff0974a1982d76c2711e76db4d"
     },
     {
-        "oem": "xiaomi",
+        "oem": "Xiaomi",
         "device": "POCO X5 PRO 5G",
         "codename": "redwood",
         "maintainer": "Thereache",
@@ -156,7 +156,7 @@
         "sha256": "927ddb77af062f1bcc6fb941bbd9b1e276f280886f7c2ef87b240b35b71952f6"
     },
     {
-        "oem": "xiaomi",
+        "oem": "Xiaomi",
         "device": "POCO X5 PRO 5G",
         "codename": "redwood",
         "maintainer": "Thereache",
