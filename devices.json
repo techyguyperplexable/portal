@@ -202,7 +202,7 @@
         "variant": "CORE",
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/surya/RisingOS_Revived-6.2.1-25022008-CORE-OFFICIAL-surya-ota.zip/download",
         "paypal": "",
-        "device_avatar": "",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x3-nfc-2.jpg",
         "filesize": 2577353402,
         "md5": "7cfa14cfde96c6273140ec1e842511b0",
         "sha256": "4e354527a64d02e7ee6113bf706645aeeb1fe1dd983c3ecd22c94db8f9b15f7e"
