@@ -23,10 +23,67 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    .device-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 15px;
+    }
+    .device-card {
+      padding: 15px;
+      border-radius: 10px;
+      background: #1c1c1c;
+      color: white;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    }
+    .device-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .device-card p {
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+    .hash {
+      font-size: 0.8rem;
+      word-break: break-all;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .donation-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #ffcc00;
+      color: black;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  </style>
 </head>
 
 <body class="services-page">
@@ -50,37 +107,26 @@
   </header>
 
   <main class="main">
-    <div class="page-title" data-aos="fade">
+
+    <section id="devices" class="services section">
       <div class="heading">
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Devices</h1>
-              <p class="mb-0">Official RisingOS supported devices and their latest builds.</p>
+              <br><br><br><h1>Devices</h1>
+              <p class="mb-0">Official RisingOS supported devices and their latest builds.</p><br>
             </div>
           </div>
         </div>
       </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Devices</li>
-          </ol>
-        </div>
-      </nav>
-    </div>
-
-    <section id="devices" class="services section">
       <div class="container">
         <div class="mb-4">
-          <label for="search-input" class="form-label">Search Devices:</label>
-          <input type="text" id="search-input" class="form-control" placeholder="Search by Device, OEM, or Maintainer">
+          <input type="text" id="search-input" class="form-control" placeholder="Search by Maintainer, OEM, Device Name, Code Name" oninput="fetchAllDevices()">
         </div>
         <div class="mb-4">
-          <label for="variant-select" class="form-label">Filter by Variant:</label>
-          <select id="variant-select" class="form-select">
-            <option value="ALL">All</option>
+          <label for="variant-filter" class="form-label">Filter by Variant:</label>
+          <select id="variant-filter" class="form-control" onchange="fetchAllDevices()">
+            <option value="">All</option>
             <option value="VANILLA">VANILLA</option>
             <option value="CORE">CORE</option>
             <option value="GAPPS">GAPPS</option>
@@ -91,9 +137,7 @@
         </div>
       </div>
     </section>
-
   </main>
-
   <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">RisingOS Revived</h3>
@@ -115,140 +159,59 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <div id="preloader"></div>
 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/js/main.js"></script>
 
   <script>
-    const deviceJsonUrls = [
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/Pong.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/cepheus.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/ginkgo.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/mondrian.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/munch.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/redwood.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/sunny.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/surya.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/topaz.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/veux.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/dubai.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/ginkgo.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/redwood.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/sky.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/sunny.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/surya.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/veux.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/Pong.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/akita.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/cepheus.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/eqs.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/marble.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/mondrian.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/munch.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/oriole.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/raven.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/redwood.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/shiba.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/surya.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/tangorpro.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/veux.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/wly.json"
-    ];
+    function formatFileSize(bytes) {
+      if (bytes >= 1e9) return (bytes / 1e9).toFixed(1) + " GB";
+      if (bytes >= 1e6) return (bytes / 1e6).toFixed(1) + " MB";
+      if (bytes >= 1e3) return (bytes / 1e3).toFixed(1) + " KB";
+      return bytes + " B";
+    }
 
     async function fetchAllDevices() {
       const devicesContainer = document.getElementById('device-list');
+      const searchQuery = document.getElementById('search-input').value.toLowerCase();
+      const variantFilter = document.getElementById('variant-filter').value;
       devicesContainer.innerHTML = '';
-      const selectedVariant = document.getElementById('variant-select').value;
-      const searchQuery = document.getElementById('search-input').value.toLowerCase(); // Capture the search query
-      const deviceMap = {};
 
-      for (const url of deviceJsonUrls) {
-        try {
-          const response = await fetch(url);
-          if (!response.ok) throw new Error(`Failed to fetch: ${url}`);
-          const data = await response.json();
-          const build = data.response[0];
-          const variant = url.includes('/VANILLA/') ? 'VANILLA' : url.includes('/CORE/') ? 'CORE' : 'GAPPS';
+      try {
+        const response = await fetch("https://raw.githubusercontent.com/RisingOS-Revived-devices/RisingOS_Web/refs/heads/main/devices.json");
+        if (!response.ok) throw new Error("Failed to fetch data");
 
-          if (!deviceMap[build.device]) {
-            deviceMap[build.device] = { oem: build.oem, builds: {} };
-          }
+        const deviceData = await response.json();
+        const filteredDevices = deviceData.filter(device =>
+          (device.device.toLowerCase().includes(searchQuery) ||
+          device.oem.toLowerCase().includes(searchQuery) ||
+          device.maintainer.toLowerCase().includes(searchQuery) ||
+          device.codename.toLowerCase().includes(searchQuery)) &&
+          (variantFilter === "" || device.variant === variantFilter)
+        );
 
-          deviceMap[build.device].builds[variant] = build;
-        } catch (error) {
-          console.error(error);
-        }
-      }
-
-      for (const [device, info] of Object.entries(deviceMap)) {
-        // Filter by search query
-        const deviceNameLower = device.toLowerCase();
-        const oemNameLower = info.oem.toLowerCase();
-        const maintainerLower = Object.values(info.builds).map(build => build.maintainer.toLowerCase()).join(' ');
-
-        if (
-          deviceNameLower.includes(searchQuery) ||
-          oemNameLower.includes(searchQuery) ||
-          maintainerLower.includes(searchQuery)
-        ) {
+        for (const device of filteredDevices) {
           const card = document.createElement('div');
           card.className = 'col-lg-4 col-md-6';
 
-          let buttons = '';
-          for (const [variant, build] of Object.entries(info.builds)) {
-            if (selectedVariant !== 'ALL' && selectedVariant !== variant) continue;
-
-            const size = formatSize(build.size);  // Format the size
-            buttons += `
-              <a href="${build.download}" class="btn btn-outline-success" target="_blank">
-                ${variant} - ${size}
-              </a>
-            `;
-          }
-
-          if (buttons) {
-            card.innerHTML = `
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-phone"></i></div>
-                <h3>${device} (${info.oem})</h3>
-                <p><strong>Maintainer:</strong> ${info.builds[Object.keys(info.builds)[0]].maintainer}</p>
-                <p><strong>Version:</strong> ${info.builds[Object.keys(info.builds)[0]].version}</p><br>
-                ${buttons}
+          card.innerHTML = `
+            <div class="device-card text-center">
+              <img src="${device.device_avatar}" alt="${device.device}" class="device-avatar">
+              <h3>${device.oem} ${device.device}</h3>
+              <p><strong>Maintainer:</strong> ${device.maintainer}</p>
+              <p><strong>Variant:</strong> ${device.variant}</p>
+              <p><strong>File Size:</strong> ${formatFileSize(device.filesize)}</p>
+              <div class="btn-container">
+                <a href="${device.download}" class="btn btn-success btn-sm" target="_blank"><i class="fas fa-download"></i> Download</a>
+                ${device.paypal ? `<a href="${device.paypal}" target="_blank" class="donation-btn"><i class="fas fa-donate"></i> Donate</a>` : ''}
               </div>
-            `;
-            devicesContainer.appendChild(card);
-          }
+            </div>`;
+          devicesContainer.appendChild(card);
         }
+      } catch (error) {
+        console.error("Error fetching devices:", error);
       }
     }
 
-    function formatSize(bytes) {
-      if (bytes >= 1073741824) {
-        return (bytes / 1073741824).toFixed(2) + ' GB';
-      } else if (bytes >= 1048576) {
-        return (bytes / 1048576).toFixed(2) + ' MB';
-      } else if (bytes >= 1024) {
-        return (bytes / 1024).toFixed(2) + ' KB';
-      } else {
-        return bytes + ' B';
-      }
-    }
-
-    document.getElementById('variant-select').addEventListener('change', fetchAllDevices);
-    document.getElementById('search-input').addEventListener('input', fetchAllDevices);  // Update when typing
     window.onload = fetchAllDevices;
   </script>
-
 </body>
-
 </html>

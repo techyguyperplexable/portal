@@ -34,8 +34,8 @@
       color: white;
     }
     .device-avatar {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
@@ -123,15 +123,6 @@
         <div class="mb-4">
           <input type="text" id="search-input" class="form-control" placeholder="Search by Maintainer, OEM, Device Name, Code Name" oninput="fetchAllDevices()">
         </div>
-        <div class="mb-4">
-          <label for="variant-filter" class="form-label">Filter by Variant:</label>
-          <select id="variant-filter" class="form-control" onchange="fetchAllDevices()">
-            <option value="">All</option>
-            <option value="VANILLA">VANILLA</option>
-            <option value="CORE">CORE</option>
-            <option value="GAPPS">GAPPS</option>
-          </select>
-        </div>
         <div class="row gy-4" id="device-list">
           <!-- Device cards will be dynamically inserted here -->
         </div>
@@ -159,7 +150,9 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
   <script>
     function formatFileSize(bytes) {
@@ -172,7 +165,6 @@
     async function fetchAllDevices() {
       const devicesContainer = document.getElementById('device-list');
       const searchQuery = document.getElementById('search-input').value.toLowerCase();
-      const variantFilter = document.getElementById('variant-filter').value;
       devicesContainer.innerHTML = '';
 
       try {
@@ -180,30 +172,68 @@
         if (!response.ok) throw new Error("Failed to fetch data");
 
         const deviceData = await response.json();
-        const filteredDevices = deviceData.filter(device =>
+        const groupedDevices = {};
+
+        deviceData.forEach(device => {
+          if (!groupedDevices[device.codename]) {
+            groupedDevices[device.codename] = { ...device, variants: [], paypal: device.paypal };
+          }
+          groupedDevices[device.codename].variants.push({
+            variant: device.variant,
+            download: device.download,
+            filesize: device.filesize
+          });
+        });
+
+        const filteredDevices = Object.values(groupedDevices).filter(device =>
           (device.device.toLowerCase().includes(searchQuery) ||
           device.oem.toLowerCase().includes(searchQuery) ||
           device.maintainer.toLowerCase().includes(searchQuery) ||
-          device.codename.toLowerCase().includes(searchQuery)) &&
-          (variantFilter === "" || device.variant === variantFilter)
+          device.codename.toLowerCase().includes(searchQuery))
         );
 
         for (const device of filteredDevices) {
           const card = document.createElement('div');
           card.className = 'col-lg-4 col-md-6';
 
+          let variantButtons = '';
+          if (device.variants.length > 1) {
+            variantButtons = `
+              <div class="dropdown">
+                <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Download
+                </button>
+                <ul class="dropdown-menu">
+                  ${device.variants.map(v => `
+                    <li><a class="dropdown-item" href="${v.download}" target="_blank">
+                      ${v.variant} (${formatFileSize(v.filesize)})
+                    </a></li>
+                  `).join('')}
+                </ul>
+              </div>`;
+          } else {
+            const singleVariant = device.variants[0];
+            variantButtons = `<a href="${singleVariant.download}" class="btn btn-success btn-sm" target="_blank">
+              <i class="fas fa-download"></i> Download (${formatFileSize(singleVariant.filesize)})
+            </a>`;
+          }
+
+          let donationButton = device.paypal ? `
+            <a href="${device.paypal}" target="_blank" class="donation-btn">
+              <i class="fas fa-donate"></i> Donate
+            </a>` : '';
+
           card.innerHTML = `
             <div class="device-card text-center">
               <img src="${device.device_avatar}" alt="${device.device}" class="device-avatar">
-              <h3>${device.oem} ${device.device}</h3>
+              <h3>${device.oem} ${device.device} (${device.codename})</h3>
               <p><strong>Maintainer:</strong> ${device.maintainer}</p>
-              <p><strong>Variant:</strong> ${device.variant}</p>
-              <p><strong>File Size:</strong> ${formatFileSize(device.filesize)}</p>
               <div class="btn-container">
-                <a href="${device.download}" class="btn btn-success btn-sm" target="_blank"><i class="fas fa-download"></i> Download</a>
-                ${device.paypal ? `<a href="${device.paypal}" target="_blank" class="donation-btn"><i class="fas fa-donate"></i> Donate</a>` : ''}
+                ${variantButtons}
+                ${donationButton}
               </div>
             </div>`;
+
           devicesContainer.appendChild(card);
         }
       } catch (error) {
