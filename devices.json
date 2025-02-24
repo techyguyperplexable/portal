@@ -1,0 +1,312 @@
+[
+    {
+        "oem": "Nothing",
+        "device": "Phone 2",
+        "codename": "Pong",
+        "maintainer": "samrth012",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/Pong/RisingOS_Revived-6.2.1-STABLE-25021218-VANILLA-OFFICIAL-Pong-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/nothing-phone2-1_.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Mi 9",
+        "codename": "cepheus",
+        "maintainer": "tribual",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/cepheus/RisingOS_Revived-6.2.1-STABLE-25021213-VANILLA-OFFICIAL-cepheus-ota.zip/download",
+        "paypal": "tribual@web.de",
+        "device_avatar": "assets/img/devices/xiaomi-mi-9-2.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 8/8T",
+        "codename": "ginkgo",
+        "maintainer": "Yeab",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/ginkgo/RisingOS_Revived-6.2.1-STABLE-25021123-VANILLA-OFFICIAL-ginkgo-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-redmi-note-8-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO F5 Pro",
+        "codename": "mondrian",
+        "maintainer": "Keosh",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/mondrian/RisingOS_Revived-6.2.1-25021619-VANILLA-OFFICIAL-mondrian-ota-signed.zip/download",
+        "paypal": "https://buymeacoffee.com/keosh",
+        "device_avatar": "assets/img/devices/xiaomi-poco-f5-2.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO F4",
+        "codename": "munch",
+        "maintainer": "Rik",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/munch/RisingOS_Revived-6.2.1-25022112-VANILLA-OFFICIAL-munch-ota.zip/download",
+        "paypal": "https://paypal.me/rikx290",
+        "device_avatar": "assets/img/devices/xiaomi-poco-f4-5g-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO X5 PRO 5G",
+        "codename": "redwood",
+        "maintainer": "Thereache",
+        "variant": "VANILLA",
+        "download": "",
+        "paypal": "https://www.paypal.me/PrajapatiAbhay917",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x5-pro-5g-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 10",
+        "codename": "sunny",
+        "maintainer": "dpenra",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/sunny/RisingOS_Revived-6.2.1-STABLE/RisingOS_Revived-6.2.1-STABLE-25021321-VANILLA-OFFICIAL-sunny-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-redmi-note10-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO X3/NFC",
+        "codename": "surya",
+        "maintainer": "shoya0x00",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/surya/RisingOS_Revived-6.2.1-25022010-VANILLA-OFFICIAL-surya-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x3-nfc-2.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 12 4G",
+        "codename": "topaz",
+        "maintainer": "Haruki x skwel",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/topaz/RisingOS_Revived-6.2.1-STABLE-25021307-VANILLA-OFFICIAL-topaz-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/redmi-note-12-4g-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 11E Pro/Redmi Note 11 Pro 5G/POCO X4 Pro 5G",
+        "codename": "veux",
+        "maintainer": "アムリタ",
+        "variant": "VANILLA",
+        "download": "",
+        "paypal": "https://PayPal.Me/takixamru",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x4-pro-1.jpg"
+    },
+    {
+        "oem": "Motorola",
+        "device": "Edge 30",
+        "codename": "dubai",
+        "maintainer": "Rakhshan (shan_rakh)",
+        "variant": "CORE",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/dubai/RisingOS_Revived-6.2.1-STABLE-25022109-CORE-OFFICIAL-dubai-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/motorola-edge-30-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 8/8T",
+        "codename": "ginkgo",
+        "maintainer": "Yeab",
+        "variant": "CORE",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/ginkgo/RisingOS_Revived-6.2.1-STABLE-25021200-CORE-OFFICIAL-ginkgo-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-redmi-note-8-1.jpg"
+    },
+    {
+        "oem": "xiaomi",
+        "device": "POCO X5 PRO 5G",
+        "codename": "redwood",
+        "maintainer": "Thereache",
+        "variant": "CORE",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/redwood/RisingOS_Revived-6.2.1-25021906-CORE-OFFICIAL-redwood-ota.zip/download",
+        "paypal": "https://www.paypal.me/PrajapatiAbhay917",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x5-pro-5g-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 12R/Redmi 12 5G/POCO M6 Pro 5G",
+        "codename": "sky",
+        "maintainer": "Ashwani",
+        "variant": "CORE",
+        "download": "",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-redmi-12r-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 10",
+        "codename": "sunny",
+        "maintainer": "dpenra",
+        "variant": "CORE",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/sunny/RisingOS_Revived-6.2.1-STABLE/RisingOS_Revived-6.2.1-STABLE-25021406-CORE-OFFICIAL-sunny-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-redmi-note10-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO X3/NFC",
+        "codename": "surya",
+        "maintainer": "shoya0x00",
+        "variant": "CORE",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/surya/RisingOS_Revived-6.2.1-25022008-CORE-OFFICIAL-surya-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x3-nfc-2.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 11E Pro/Redmi Note 11 Pro 5G/POCO X4 Pro 5G",
+        "codename": "veux",
+        "maintainer": "アムリタ",
+        "variant": "CORE",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/veux/RisingOS_Revived-6.2.1-STABLE-25021419-CORE-OFFICIAL-veux-ota.zip/download",
+        "paypal": "https://PayPal.Me/takixamru",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x4-pro-1.jpg"
+    },
+    {
+        "oem": "Nothing",
+        "device": "Phone 2",
+        "codename": "Pong",
+        "maintainer": "samrth012",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/Pong/RisingOS_Revived-6.2.1-STABLE-25021214-GAPPS-OFFICIAL-Pong-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/nothing-phone2-1_.jpg"
+    },
+    {
+        "oem": "Google",
+        "device": "Pixel 8a",
+        "codename": "akita",
+        "maintainer": "EliteDarkKaiser",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/akita/RisingOS_Revived-6.2.1-25021515-GAPPS-OFFICIAL-akita-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/google-pixel-8a-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Mi 9",
+        "codename": "cepheus",
+        "maintainer": "tribual",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/cepheus/RisingOS_Revived-6.2.1-STABLE-25021215-GAPPS-OFFICIAL-cepheus-ota.zip/download",
+        "paypal": "tribual@web.de",
+        "device_avatar": "assets/img/devices/xiaomi-mi-9-2.jpg"
+    },
+    {
+        "oem": "Motorola",
+        "device": "Edge 30 Ultra",
+        "codename": "eqs",
+        "maintainer": "davigamer987",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/eqs/RisingOS_Revived-6.2.1-STABLE-25020715-GAPPS-COMMUNITY-eqs-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/motorola-edge30-ultra-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO F5 Pro",
+        "codename": "mondrian",
+        "maintainer": "Keosh",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/mondrian/RisingOS_Revived-6.2.1-25021612-GAPPS-OFFICIAL-mondrian-ota-signed.zip/download",
+        "paypal": "https://buymeacoffee.com/keosh",
+        "device_avatar": "assets/img/devices/xiaomi-poco-f5-2.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO F4",
+        "codename": "munch",
+        "maintainer": "Rik",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/munch/RisingOS_Revived-6.2.1-25022115-GAPPS-OFFICIAL-munch-ota.zip/download",
+        "paypal": "https://paypal.me/rikx290",
+        "device_avatar": "assets/img/devices/xiaomi-poco-f4-5g-1.jpg"
+    },
+    {
+        "oem": "Google",
+        "device": "Pixel 6",
+        "codename": "oriole",
+        "maintainer": "Jrcable2",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/oriole/RisingOS_Revived-6.2.1-STABLE-25021213-GAPPS-OFFICIAL-oriole-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/google-pixel-6-1.jpg"
+    },
+    {
+        "oem": "Google",
+        "device": "Pixel 6 Pro",
+        "codename": "raven",
+        "maintainer": "Jrcable2",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/raven/RisingOS_Revived-6.2.1-STABLE-25021212-GAPPS-OFFICIAL-raven-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/google-pixel-6-pro-1.jpg"
+    },
+    {
+        "oem": "xiaomi",
+        "device": "POCO X5 PRO 5G",
+        "codename": "redwood",
+        "maintainer": "Thereache",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/redwood/RisingOS_Revived-6.2.1-25021905-GAPPS-OFFICIAL-redwood-ota.zip/download",
+        "paypal": "https://www.paypal.me/PrajapatiAbhay917",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x5-pro-5g-1.jpg"
+    },
+    {
+        "oem": "Google",
+        "device": "Pixel 8",
+        "codename": "shiba",
+        "maintainer": "EliteDarkKaiser",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/shiba/RisingOS_Revived-6.2.1-25021514-GAPPS-OFFICIAL-shiba-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/google-pixel-8-1.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "POCO X3/NFC",
+        "codename": "surya",
+        "maintainer": "shoya0x00",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/surya/RisingOS_Revived-6.2.1-25022007-GAPPS-OFFICIAL-surya-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x3-nfc-2.jpg"
+    },
+    {
+        "oem": "Google",
+        "device": "Pixel Tablet",
+        "codename": "tangorpro",
+        "maintainer": "EliteDarkKaiser",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/tangorpro/RisingOS_Revived-6.2.1-25021513-GAPPS-OFFICIAL-tangorpro-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/google-pixel-tablet-10.jpg"
+    },
+    {
+        "oem": "Xiaomi",
+        "device": "Redmi Note 11E Pro/Redmi Note 11 Pro 5G/POCO X4 Pro 5G",
+        "codename": "veux",
+        "maintainer": "アムリタ",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/veux/RisingOS_Revived-6.2.1-STABLE-25021423-GAPPS-OFFICIAL-veux-ota.zip/download",
+        "paypal": "https://PayPal.Me/takixamru",
+        "device_avatar": "assets/img/devices/xiaomi-poco-x4-pro-1.jpg"
+    },
+    {
+        "oem": "OnePlus",
+        "device": "10 Pro",
+        "codename": "wly",
+        "maintainer": "Arman-ATI",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/wly/RisingOS_Revived-6.2.1-STABLE-25020612-GAPPS-OFFICIAL-wly-ota.zip/download",
+        "paypal": "https://telegra.ph/Builds-Support-05-01",
+        "device_avatar": "assets/img/devices/oneplus-10-pro-1.jpg"
+    }
+]
