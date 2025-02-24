@@ -46,7 +46,7 @@
         "variant": "VANILLA",
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/mondrian/RisingOS_Revived-6.2.1-25021619-VANILLA-OFFICIAL-mondrian-ota-signed.zip/download",
         "paypal": "https://buymeacoffee.com/keosh",
-        "device_avatar": "assets/img/devices/xiaomi-poco-f5-2.jpg",
+        "device_avatar": "assets/img/devices/xiaomi-poco-f5-pro-2.jpg",
         "filesize": 2444430467,
         "md5": "7d03ebbda815621de55c9017b603b2f9",
         "sha256": "9511d1f35bb3818dd642086594110ed7eb947406c6aedc0dd0b53d8f05f3c882"
@@ -280,7 +280,7 @@
         "variant": "GAPPS",
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/mondrian/RisingOS_Revived-6.2.1-25021612-GAPPS-OFFICIAL-mondrian-ota-signed.zip/download",
         "paypal": "https://buymeacoffee.com/keosh",
-        "device_avatar": "assets/img/devices/xiaomi-poco-f5-2.jpg",
+        "device_avatar": "assets/img/devices/xiaomi-poco-f5-pro-2.jpg",
         "filesize": 3196333262,
         "md5": "81d38aa04ee0d4d5e0859ff4e22ec71c",
         "sha256": "3e31372de03f304162bd546da04254d1ca5c5d5277946eca6e3e94a615a8d115"
