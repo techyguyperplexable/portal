@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Supported Devices</title>
+  <meta name="description" content="Official RisingOS supported devices and their latest builds.">
+  <meta name="keywords" content="RisingOS, Android ROM, Supported Devices, Custom ROM">
+
+  <!-- Favicons -->
+  <link href="assets/img/tab-logo.png" rel="icon">
+  <link href="assets/img/tab-logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="services-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h4 class="sitename">RisingOS Revived</h4>
+        <img src="assets/img/risingOS_logo.png" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="devices.html" class="active">Devices</a></li>
+          <li><a href="changelogs.html">Changelogs</a></li>
+          <li><a href="screenshots.html">Screenshots</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Devices</h1>
+              <p class="mb-0">Official RisingOS supported devices and their latest builds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Devices</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="devices" class="services section">
+      <div class="container">
+        <div class="mb-4">
+          <label for="search-input" class="form-label">Search Devices:</label>
+          <input type="text" id="search-input" class="form-control" placeholder="Search by Device, OEM, or Maintainer">
+        </div>
+        <div class="mb-4">
+          <label for="variant-select" class="form-label">Filter by Variant:</label>
+          <select id="variant-select" class="form-select">
+            <option value="ALL">All</option>
+            <option value="VANILLA">VANILLA</option>
+            <option value="CORE">CORE</option>
+            <option value="GAPPS">GAPPS</option>
+          </select>
+        </div>
+        <div class="row gy-4" id="device-list">
+          <!-- Device cards will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">RisingOS Revived</h3>
+      <p>Stay updated with the latest RisingOS builds and supported devices.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://t.me/RisingOSRevived"><i class="bi bi-telegram"></i></a>
+        <a href="https://github.com/RisingOS-Revived"><i class="bi bi-github"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">RisingOS Revived</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          Developed by <a href="https://t.me/skwel24">@skwel24</a> and Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const deviceJsonUrls = [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/Pong.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/cepheus.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/ginkgo.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/mondrian.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/munch.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/redwood.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/sunny.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/surya.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/topaz.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/veux.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/dubai.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/ginkgo.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/redwood.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/sky.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/sunny.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/surya.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/veux.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/Pong.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/akita.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/cepheus.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/eqs.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/marble.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/mondrian.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/munch.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/oriole.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/raven.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/redwood.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/shiba.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/surya.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/tangorpro.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/veux.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/wly.json"
+    ];
+
+    async function fetchAllDevices() {
+      const devicesContainer = document.getElementById('device-list');
+      devicesContainer.innerHTML = '';
+      const selectedVariant = document.getElementById('variant-select').value;
+      const searchQuery = document.getElementById('search-input').value.toLowerCase(); // Capture the search query
+      const deviceMap = {};
+
+      for (const url of deviceJsonUrls) {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error(`Failed to fetch: ${url}`);
+          const data = await response.json();
+          const build = data.response[0];
+          const variant = url.includes('/VANILLA/') ? 'VANILLA' : url.includes('/CORE/') ? 'CORE' : 'GAPPS';
+
+          if (!deviceMap[build.device]) {
+            deviceMap[build.device] = { oem: build.oem, builds: {} };
+          }
+
+          deviceMap[build.device].builds[variant] = build;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      for (const [device, info] of Object.entries(deviceMap)) {
+        // Filter by search query
+        const deviceNameLower = device.toLowerCase();
+        const oemNameLower = info.oem.toLowerCase();
+        const maintainerLower = Object.values(info.builds).map(build => build.maintainer.toLowerCase()).join(' ');
+
+        if (
+          deviceNameLower.includes(searchQuery) ||
+          oemNameLower.includes(searchQuery) ||
+          maintainerLower.includes(searchQuery)
+        ) {
+          const card = document.createElement('div');
+          card.className = 'col-lg-4 col-md-6';
+
+          let buttons = '';
+          for (const [variant, build] of Object.entries(info.builds)) {
+            if (selectedVariant !== 'ALL' && selectedVariant !== variant) continue;
+
+            const size = formatSize(build.size);  // Format the size
+            buttons += `
+              <a href="${build.download}" class="btn btn-outline-success" target="_blank">
+                ${variant} - ${size}
+              </a>
+            `;
+          }
+
+          if (buttons) {
+            card.innerHTML = `
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-phone"></i></div>
+                <h3>${device} (${info.oem})</h3>
+                <p><strong>Maintainer:</strong> ${info.builds[Object.keys(info.builds)[0]].maintainer}</p>
+                <p><strong>Version:</strong> ${info.builds[Object.keys(info.builds)[0]].version}</p><br>
+                ${buttons}
+              </div>
+            `;
+            devicesContainer.appendChild(card);
+          }
+        }
+      }
+    }
+
+    function formatSize(bytes) {
+      if (bytes >= 1073741824) {
+        return (bytes / 1073741824).toFixed(2) + ' GB';
+      } else if (bytes >= 1048576) {
+        return (bytes / 1048576).toFixed(2) + ' MB';
+      } else if (bytes >= 1024) {
+        return (bytes / 1024).toFixed(2) + ' KB';
+      } else {
+        return bytes + ' B';
+      }
+    }
+
+    document.getElementById('variant-select').addEventListener('change', fetchAllDevices);
+    document.getElementById('search-input').addEventListener('input', fetchAllDevices);  // Update when typing
+    window.onload = fetchAllDevices;
+  </script>
+
+</body>
+
+</html>
