@@ -197,7 +197,7 @@
     {
         "oem": "Xiaomi",
         "device": "POCO X3/NFC",
-        "codename": "",
+        "codename": "surya",
         "maintainer": "shoya0x00",
         "variant": "CORE",
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/surya/RisingOS_Revived-6.2.1-25022008-CORE-OFFICIAL-surya-ota.zip/download",
