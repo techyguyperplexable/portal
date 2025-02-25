@@ -10,7 +10,7 @@
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-x4-pro-1.jpg",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/veux.txt"
-  }
+  },
   "sunny": {
     "maintainer": "dpenra",
     "device": "Redmi Note 10",
