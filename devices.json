@@ -560,7 +560,7 @@
     {
         "status": "active",
         "oem": "Samsung",
-        "device": "Samsung A73 5G",
+        "device": "A73 5G",
         "codename": "a73xq",
         "maintainer": "alqix",
         "variant": "VANILLA",
