@@ -24,7 +24,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/sunny.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/sunny.json"
     ],
-    "device_avatar": "assets/img/devices/xiaomi-poco-x3-nfc-2.jpg",
+    "device_avatar": "assets/img/devices/xiaomi-redmi-note10-1.jpg",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sunny.txt"
   },
   "cepheus": {
