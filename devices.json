@@ -556,5 +556,23 @@
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
         "recovery": ""
+    },
+    {
+        "status": "active",
+        "oem": "Samsung",
+        "device": "A73 5G",
+        "codename": "a73xq",
+        "maintainer": "alqix",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/RisingOS_Revived-6.2.1-25022118-VANILLA-OFFICIAL-a73xq-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/samsung-galaxy-a73-5g-1.jpg",
+        "filesize": 1557955639,
+        "md5": "9c2819a62ca29b97fd05040f60f83568",
+        "sha256": "02a7b4904403a535d85785e94192fcc742c9e51e2c2c019d196cec2a02ebf973",
+        "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt",
+        "version": "6.2.1-Boundless",
+        "buildtype": "Stable",
+        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/recovery/20250221-recovery.img"
     }
 ]

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Statistics</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="assets/img/tab-logo.png" rel="icon">
+  <link href="assets/img/tab-logo.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body { background-color: #000; color: #fff; }
+    pre#readme-content { background-color: #1e1e1e; color: #d4d4d4; }
+    .update-button { background-color: #28a745; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+    .update-button:hover { background-color: #218838; }
+    .chart-container { margin-top: 150px; }
+  </style>
+</head>
+
+<body class="about-page" onload="fetchStats()">
+  <header id="header" class="header fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h4 class="sitename">RisingOS Revived</h4>
+        <img src="assets/img/risingOS_logo.png" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="devices.html">Devices</a></li>
+          <li><a href="changelogs.html">Changelogs</a></li>
+          <li><a class="active">Statistics</a></li>
+          <li><a href="screenshots.html">Screenshots</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" style="margin-top: 150px;">
+    <div class="container mt-5 chart-container">
+      <h2>Download Statistics</h2>
+      <div id="charts">
+        <canvas id="downloadChart"></canvas><br><br>
+        <h2>Top 5 Downloading Countries</h2>
+        <canvas id="countryChart"></canvas><br><br>
+        <h2>Top Downloads by OS</h2>
+        <canvas id="osChart"></canvas>
+      </div>
+    </div>
+  </main>
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">RisingOS Revived</h3>
+      <p></p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://t.me/RisingOSRevived"><i class="bi bi-telegram"></i></a>
+        <a href="https://github.com/RisingOS-Revived"><i class="bi bi-github"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">RisingOS Revived</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Developed by <a href="https://t.me/skwel24">@skwel24</a> AND Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    async function fetchStats() {
+      const now = new Date();
+      const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+      const today = now.toISOString().split('T')[0];
+      const url = `https://sourceforge.net/projects/risingos-revived/files/6.x/stats/json?start_date=${firstDayOfMonth}&end_date=${today}`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Network response was not ok");
+        const data = await response.json();
+
+        if (!data.downloads || !data.oses_by_country) {
+          console.error("Missing expected data fields in API response");
+          return;
+        }
+
+        const labels = data.downloads.map(entry => entry[0].split(" ")[0]);
+        const downloads = data.downloads.map(entry => entry[1]);
+
+        const countryTotals = {};
+        for (const country in data.oses_by_country) {
+          countryTotals[country] = Object.values(data.oses_by_country[country]).reduce((a, b) => a + b, 0);
+        }
+        const topCountries = Object.entries(countryTotals).sort((a, b) => b[1] - a[1]).slice(0, 5);
+        const countryLabels = topCountries.map(entry => entry[0]);
+
+        const osDownloads = { Linux: 0, Android: 0, Windows: 0 };
+        for (const country in data.oses_by_country) {
+          for (const os in data.oses_by_country[country]) {
+            if (osDownloads.hasOwnProperty(os)) {
+              osDownloads[os] += data.oses_by_country[country][os];
+            }
+          }
+        }
+        const osLabels = Object.keys(osDownloads);
+        const osData = Object.values(osDownloads);
+
+        new Chart(document.getElementById('downloadChart').getContext('2d'), {
+          type: 'line',
+          data: { labels, datasets: [{ label: 'Downloads per Day', data: downloads, borderColor: 'green', fill: true }] }
+        });
+
+        new Chart(document.getElementById('countryChart').getContext('2d'), {
+          type: 'bar',
+          data: { labels: countryLabels, datasets: [{ label: 'Downloads', data: topCountries.map(entry => entry[1]), backgroundColor: 'blue' }] }
+        });
+
+        new Chart(document.getElementById('osChart').getContext('2d'), {
+          type: 'doughnut',
+          data: { labels: osLabels, datasets: [{ label: 'Downloads', data: osData, backgroundColor: ['red', 'blue', 'green'] }] }
+        });
+      } catch (error) {
+        console.error("Error fetching stats:", error);
+      }
+    }
+  </script>
+</body>
+</html>
