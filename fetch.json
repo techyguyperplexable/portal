@@ -268,8 +268,8 @@
   "a73xq": {
     "status": "active",
     "maintainer": "alqix",
-		"oem": "Samsung",
-		"device": "Samsung A73 5G",
+    "oem": "Samsung",
+    "device": "A73 5G",
     "codename": "a73xq",
     "urls": [
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/a73xq.json",
