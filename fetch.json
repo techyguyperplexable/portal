@@ -264,5 +264,19 @@
     ],
     "device_avatar": "assets/img/devices/oneplus-10-pro-1.jpg",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/wly.txt"
+  },
+  "a73xq": {
+    "status": "active",
+    "maintainer": "alqix",
+		"oem": "Samsung",
+		"device": "Samsung A73 5G",
+    "codename": "a73xq",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/a73xq.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/a73xq.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/a73xq.json"
+    ],
+    "device_avatar": "assets/img/devices/samsung-galaxy-a73-5g-1.jpg",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt"
   }
 }
