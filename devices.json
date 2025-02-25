@@ -315,7 +315,7 @@
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/dubai/RisingOS_Revived-6.2.1-STABLE-25022109-CORE-OFFICIAL-dubai-ota.zip/download",
         "paypal": "",
         "device_avatar": "assets/img/devices/motorola-edge-30-1.jpg",
-        "filesize": 25185823704,
+        "filesize": 2518582370,
         "md5": "9d64a9b359038722e8907a01892a2f82",
         "sha256": "057a54f676779f613669cdf4932c8b95b86cd164b7bb9ebc739169020e05367a",
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dubai.txt",
