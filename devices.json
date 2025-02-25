@@ -315,7 +315,7 @@
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/dubai/RisingOS_Revived-6.2.1-STABLE-25022109-CORE-OFFICIAL-dubai-ota.zip/download",
         "paypal": "",
         "device_avatar": "assets/img/devices/motorola-edge-30-1.jpg",
-        "filesize": 2518582370,
+        "filesize": 25185823704,
         "md5": "9d64a9b359038722e8907a01892a2f82",
         "sha256": "057a54f676779f613669cdf4932c8b95b86cd164b7bb9ebc739169020e05367a",
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dubai.txt",
@@ -556,5 +556,23 @@
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
         "recovery": ""
+    },
+    {
+        "status": "active",
+        "oem": "Samsung",
+        "device": "Samsung A73 5G",
+        "codename": "a73xq",
+        "maintainer": "alqix",
+        "variant": "VANILLA",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/RisingOS_Revived-6.2.1-25022118-VANILLA-OFFICIAL-a73xq-ota-signed.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/samsung-galaxy-a73-5g-1.jpg",
+        "filesize": 1557955639,
+        "md5": "9c2819a62ca29b97fd05040f60f83568",
+        "sha256": "02a7b4904403a535d85785e94192fcc742c9e51e2c2c019d196cec2a02ebf973",
+        "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt",
+        "version": "6.2.1-Boundless",
+        "buildtype": "Stable",
+        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/recovery/20250221-recovery.img"
     }
 ]
