@@ -28,6 +28,14 @@
     .update-button { background-color: #28a745; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
     .update-button:hover { background-color: #218838; }
     .chart-container { margin-top: 150px; }
+
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
   </style>
 </head>
 
@@ -53,12 +61,13 @@
 
   <main class="main" style="margin-top: 150px;">
     <div class="container mt-5 chart-container">
-      <h2>Download Statistics</h2>
-
-      <div class="card text-white bg-dark mb-4" style="max-width: 18rem;">
-        <div class="card-body" style="background-color:green">
-          <h5 class="card-title">Total Downloads</h5>
-          <p class="card-text" id="totalDownloads">Loading...</p>
+      <h2 class="text-center">Download Statistics</h2>
+      <div class="center-container">
+        <div class="card text-white bg-dark mb-4" style="max-width: 18rem;">
+          <div class="card-body" style="background-color: green;">
+            <h5 class="card-title">Total Downloads</h5>
+            <p class="card-text" id="totalDownloads">Loading...</p>
+          </div>
         </div>
       </div>
 
