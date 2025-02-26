@@ -66,7 +66,9 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/bg.gif" alt="" data-aos="fade-in">
+       <div class="gif-container">
+          <img src="assets/img/bg.gif" alt="Animated Cursor" />
+      </div>
 
       <div class="container" data-aos="zoom-out" data-aos-delay="100">
         <h2>RisingOS Revived</h2>
@@ -156,6 +158,96 @@
   color: white !important;
 }
 
+/* Ensure the GIF covers the whole background */
+#hero {
+  position: relative;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Style the background GIF */
+/* Ensure the GIF maintains sharp quality */
+#hero img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100vh;
+  max-width: 100%;
+  object-fit: contain;
+  z-index: -1; /* Ensures it's behind the text */
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .gif-container {
+        position: absolute;
+        top: 354px; /* 20% lower (320px + 20%) */
+        left: 40%;
+        transform: translateX(-50%);
+        width: 130%;
+        max-width: 500px;
+        z-index: 5;
+    }
+
+    .text-container {
+        position: relative;
+        margin-top: 300px; /* 20% lower (250px + 20%) */
+        text-align: center;
+        z-index: 10;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    .gif-container {
+        position: absolute;
+        top: 246px; /* 20% lower (200px + 20%) */
+        left: 45%;
+        transform: translateX(-50%);
+        width: 140%;
+        max-width: 850px;
+        z-index: 5;
+    }
+
+    .text-container {
+        position: relative;
+        margin-top: 360px; /* 20% lower (300px + 20%) */
+        text-align: center;
+        z-index: 10;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    #hero {
+        background-size: 50%; /* Adjust to fit better */
+        background-position: top center;
+    }
+}
+
+
+#hero {
+    background-image: url('assets/img/bg.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.dark-background {
+  background: none !important; /* Remove any solid background */
+}
 </style>
 
   <footer id="footer" class="footer dark-background">
