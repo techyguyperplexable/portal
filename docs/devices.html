@@ -73,20 +73,30 @@
     }
 
     .btn-container a,
-    .btn-container button {
+    .btn-container button,
+    .btn-container .dropdown {
       flex: 1;
       min-width: 120px; /* Ensures uniform width */
       max-width: 150px;
+      width: 150px;
       padding: 8px 12px;
       font-size: 0.9rem;
       font-weight: bold;
       text-align: center;
-      border-radius: 5px;
+      border-radius: 20px;
       transition: all 0.3s ease-in-out;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 5px;
+      height: 45px; /* Ensures uniform height */
+    }
+
+    /* Ensure dropdown buttons also follow width rules */
+    .btn-container .dropdown .btn {
+      /*width: 100%;*/
+      width: 150px !important; /* Force width match */
+      max-width: 150px;
     }
 
     .btn-success i, .btn-danger i, .btn-info i, .donation-btn i {
@@ -99,17 +109,20 @@
         align-items: center;
       }
       .btn-container a,
-      .btn-container button {
-        width: 100%; /* Full width on smaller screens */
-        max-width: 200px;
+      .btn-container button,
+      .btn-container .dropdown {
+        width: 120%; /* Full width on smaller screens */
+        max-width: 120px;
       }
     }
+
     .header.scrolled {
       backdrop-filter: blur(50px);
       background-color: rgba(0, 0, 0, 0.5);
       transition: backdrop-filter 0.3s, background-color 0.3s;
     }
   </style>
+
 </head>
 
 <body class="services-page">
@@ -125,8 +138,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="devices.html" class="active">Devices</a></li>
           <li><a href="changelogs.html">Changelogs</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="screenshots.html">Screenshots</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

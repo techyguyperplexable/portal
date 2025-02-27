@@ -52,8 +52,8 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="devices.html">Devices</a></li>
           <li><a href="changelogs.html">Changelogs</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="screenshots.html">Screenshots</a></li>
+          <li><a href="#statistics">Statistics</a></li>
+          <li><a href="#screenshot-slider">Screenshots</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -66,9 +66,13 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/bg.gif" alt="" data-aos="fade-in">
+      <!-- Video Background -->
+     <video autoplay loop muted playsinline class="video-background">
+       <source src="assets/img/bgtest.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
 
-      <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <div class="container" data-aos="zoom-out" data-aos-delay="100" style="position:center">
         <h2>RisingOS Revived</h2>
         <p>We are <span class="typed" data-typed-items="Powerful, Customizable, Refined.">RisingOS Revived</span><span class="typed-cursor typed-cursor--blink"></span></p>
         <br>
@@ -78,6 +82,71 @@
       </div>
 
     </section><!-- /Hero Section -->
+
+    <!-- Screenshot Slider Section -->
+   <section id="screenshot-slider" class="screenshot-slider section">
+     <div class="container text-center">
+       <h2>Screenshots</h2><br>
+       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-inner">
+           <div class="carousel-item active">
+             <img src="assets/img/screenshots/screenshot2-portrait.png" class="d-block w-30" alt="Screenshot 2">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot3-portrait.png" class="d-block w-30" alt="Screenshot 3">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot4-portrait.png" class="d-block w-30" alt="Screenshot 4">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot5-portrait.png" class="d-block w-30" alt="Screenshot 5">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot6-portrait.png" class="d-block w-30" alt="Screenshot 6">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot7-portrait.png" class="d-block w-30" alt="Screenshot 7">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot8-portrait.png" class="d-block w-30" alt="Screenshot 8">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot9-portrait.png" class="d-block w-30" alt="Screenshot 9">
+           </div>
+           <div class="carousel-item">
+             <img src="assets/img/screenshots/screenshot10-portrait.png" class="d-block w-30" alt="Screenshot 10">
+           </div>
+         </div>
+         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Previous</span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Next</span>
+         </button>
+       </div>
+     </div>
+   </section>
+
+   <!-- Statistics Section -->
+   <section id="statistics" class="statistics section text-center">
+     <div class="container">
+       <h2>Statistics</h2><br>
+       <h4 id="totalDownloads">Total Downloads: Loading...</h4>
+       <div class="row">
+         <div class="col-md-4">
+           <canvas id="lineChart"></canvas>
+         </div>
+         <div class="col-md-4">
+           <canvas id="pieChart"></canvas>
+         </div>
+         <div class="col-md-4">
+           <canvas id="barChart"></canvas>
+         </div>
+       </div>
+     </div>
+   </section>
 
   </main>
 
@@ -89,6 +158,12 @@
 </section>
 
 <script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var carousel = document.querySelector("#carouselExampleIndicators");
+    if (carousel) {
+      var bsCarousel = new bootstrap.Carousel(carousel);
+    } });
   document.addEventListener("DOMContentLoaded", async function () {
     try {
       const response = await fetch("https://raw.githubusercontent.com/RisingOS-Revived-devices/RisingOS_Web/main/core-team.json");
@@ -115,9 +190,71 @@
       console.error("Error fetching team data:", error);
     }
   });
+
+  async function fetchData() {
+    const today = new Date().toISOString().split('T')[0];
+    const firstDayOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().split('T')[0];
+    const url = `https://sourceforge.net/projects/risingos-revived/files/6.x/stats/json?start_date=${firstDayOfMonth}&end_date=${today}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log("API Response:", data);  // Debugging
+
+      document.getElementById('totalDownloads').innerText = `Total Downloads: ${data.total}`;
+      // Extract downloads per day
+      const lineChartData = {
+        labels: data.downloads.map(entry => entry[0]),  // Dates
+        datasets: [{
+          label: 'Downloads per Day',
+          data: data.downloads.map(entry => entry[1]),  // Download counts
+          borderColor: 'white',
+          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          fill: true
+        }]
+      };
+
+      // Extract OS download stats
+      const osDownloads = Object.fromEntries(data.oses);  // Convert [[OS, count], ...] to object
+      const pieChartData = {
+        labels: Object.keys(osDownloads),
+        datasets: [{
+          data: Object.values(osDownloads),
+          backgroundColor: ['red', 'green', 'blue', 'yellow', 'purple']
+        }]
+      };
+
+      // Extract country download stats
+      const countryDownloads = Object.fromEntries(data.countries);  // Convert [[Country, count], ...] to object
+      const barChartData = {
+        labels: Object.keys(countryDownloads),
+        datasets: [{
+          label: 'Downloads by Country',
+          data: Object.values(countryDownloads),
+          backgroundColor: 'purple'
+        }]
+      };
+
+      // Draw charts
+      new Chart(document.getElementById('lineChart').getContext('2d'), { type: 'line', data: lineChartData });
+      new Chart(document.getElementById('pieChart').getContext('2d'), { type: 'pie', data: pieChartData });
+      new Chart(document.getElementById('barChart').getContext('2d'), { type: 'bar', data: barChartData });
+
+    } catch (error) {
+      console.error("Error fetching statistics:", error);
+    }
+  }
+
+  // Run the function
+  fetchData();
+
 </script>
 
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
 .card {
   border-radius: 15px;
   transition: transform 0.3s;
@@ -129,6 +266,65 @@
 
 .card:hover {
   transform: scale(1.05);
+}
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  }
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.screenshot-slider {
+      padding: 50px 0;
+      background-color: #000;
+      color: white;
+    }
+
+.carousel img {
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    width:30%;
+}
+
+.carousel-item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.statistics {
+  padding: 50px 0;
+  background-color: #000;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-4 {
+  flex: 1 1 300px;
+  max-width: 400px;
+  padding: 10px;
 }
 
 /* Ensure position text is fully white */
@@ -198,10 +394,11 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
