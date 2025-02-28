@@ -5,7 +5,7 @@
 */
 
 
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     var carousel = document.querySelector("#carouselExampleIndicators");
     if (carousel) {
       var bsCarousel = new bootstrap.Carousel(carousel);
@@ -39,8 +39,8 @@
 
   async function fetchData() {
     const today = new Date().toISOString().split('T')[0];
-    const firstDayOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().split('T')[0];
-    const url = `https://sourceforge.net/projects/risingos-revived/files/6.x/stats/json?start_date=${firstDayOfMonth}&end_date=${today}`;
+    //const firstDayOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().split('T')[0];
+    const url = `https://sourceforge.net/projects/risingos-revived/files/6.x/stats/json?start_date=2025-02-01&end_date=${today}`;
 
     try {
       const response = await fetch(url);

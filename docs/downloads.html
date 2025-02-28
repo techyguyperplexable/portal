@@ -19,7 +19,7 @@
                 console.log("Extracted codename:", codename);
 
                 if (!codename) {
-                    document.getElementById('content').innerHTML = '<p class="text-red-500">No codename provided.</p>';
+                    document.getElementById('content').insertAdjacentHTML('beforeend', '<p class="text-red-500">No codename provided.</p>');
                     return;
                 }
 
@@ -28,6 +28,7 @@
                 if (deviceVariants.length > 0) {
                     const dropdown = document.getElementById('variant-dropdown');
                     dropdown.classList.remove('hidden');
+                    dropdown.innerHTML = ""; // Clear previous options
 
                     deviceVariants.forEach(device => {
                         const option = document.createElement("option");
@@ -36,33 +37,50 @@
                         dropdown.appendChild(option);
                     });
 
+                    updatePreviousBuildsLink(deviceVariants[0].variant, codename);
                     loadDeviceData(deviceVariants[0]);
+
                     dropdown.addEventListener('change', function() {
                         const selectedVariant = dropdown.value;
                         const selectedDevice = deviceVariants.find(d => d.variant === selectedVariant);
                         loadDeviceData(selectedDevice);
+                        updatePreviousBuildsLink(selectedVariant, codename);
                     });
                 } else {
                     console.error("Device not found or no download available for:", codename);
-                    document.getElementById('content').innerHTML = '<p class="text-red-500">Device not found or no download available.</p>';
+                    document.getElementById('content').insertAdjacentHTML('beforeend', '<p class="text-red-500">Device not found or no download available.</p>');
                 }
             } catch (error) {
                 console.error("Error fetching device data:", error);
-                document.getElementById('content').innerHTML = '<p class="text-red-500">Failed to load device data.</p>';
+                document.getElementById('content').insertAdjacentHTML('beforeend', '<p class="text-red-500">Failed to load device data.</p>');
+            }
+        }
+
+        function updatePreviousBuildsLink(variant, codename) {
+            const previousBuildsLink = document.getElementById('previous-builds');
+            if (previousBuildsLink) {
+                if (variant && codename) {
+                    previousBuildsLink.href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${variant.toUpperCase()}/${codename}`;
+                } else {
+                    previousBuildsLink.href = "https://sourceforge.net/projects/risingos-revived/files/6.x/";
+                }
             }
         }
 
         function loadDeviceData(device) {
             document.getElementById('device-name').textContent = device.device;
+            document.getElementById('version').textContent = device.version;
+            document.getElementById('build-type').textContent = device.buildtype || "STABLE";
             document.getElementById('maintainer').textContent = device.maintainer;
+            document.getElementById('code-name').textContent = device.codename;
             document.getElementById('download-link').href = device.download;
             document.getElementById('oem').textContent = device.oem;
             document.getElementById('download-link').textContent = 'Download Now';
             document.getElementById('device-image').src = device.device_avatar;
             document.getElementById('filesize').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
-            document.getElementById('checksum').textContent = device.sha256.substring(0, 10) + '...';
+            document.getElementById('checksum').textContent = device.sha256.substring(0, 10) + '...RisingOS_Revived';
             document.getElementById('checksum').dataset.fullValue = device.sha256;
-            document.getElementById('md5').textContent = device.md5.substring(0, 10) + '...';
+            document.getElementById('md5').textContent = device.md5.substring(0, 10) + '...RisingOS_Revived';
             document.getElementById('md5').dataset.fullValue = device.md5;
             document.getElementById('device-changelog').href = device.device_changelog;
             document.getElementById('paypal-link').href = device.paypal;
@@ -105,8 +123,9 @@
          <p>We highly recommend following the official flashing instructions provided by your device maintainer to avoid potential issues. Please note that we are not responsible for any damage, malfunctions, or data loss that may occur. Proceed with caution and at your own risk.</p>
      </div>
         <div id="card" class="bg-gray-900 shadow-xl shadow-blue-500/50 rounded-lg p-6 text-white hidden w-full">
-            <h1 class="text-2xl font-bold mb-4 text-center">Download for <span id="oem"></span> <span id="device-name"></span></h1>
+            <h1 class="text-2xl font-bold mb-4 text-center">Download for <span id="oem"></span> <span id="device-name"></span> (<span id="code-name" style="color:green;"></span>)</h1>
             <img id="device-image" src="" alt="Device Image" class="w-48 mx-auto mb-4 rounded">
+            <h3 class="text-red-300" style="text-align:center;">(<strong><span id="version"></span> | <span id="build-type"></span></strong>)</h3><br>
             <div class="text-left space-y-2">
                 <label for="variant-dropdown" class="text-gray-300">Select Variant:</label>
                 <select id="variant-dropdown" class="bg-gray-800 text-white px-3 py-2 rounded w-full hidden"></select>
@@ -125,6 +144,7 @@
             <a id="device-changelog" href="#" class="mt-2 block text-center bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600">Device Flashing Instructions & Changelogs</a>
             <a id="paypal-link" href="#" class="mt-2 block text-center bg-yellow-500 text-white px-4 py-2 rounded shadow hover:bg-yellow-600">Donate via PayPal</a>
             <a id="recovery-link" href="#" class="mt-2 block text-center bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">Recovery Download</a>
+            <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="mt-2 block text-center bg-pink-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">Previous Builds</a>
         </div>
     </div>
 </body>
