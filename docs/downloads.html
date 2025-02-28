@@ -110,6 +110,7 @@
         button, a {
             border-radius: 15px !important;
         }
+
     </style>
 </head>
 <body class="bg-black flex items-center justify-center min-h-screen">
@@ -133,18 +134,18 @@
                 <p class="text-gray-300"><strong>File Size:</strong> <span id="filesize"></span></p>
                 <div class="flex items-center justify-between">
                     <p class="text-gray-300"><strong>SHA-256:</strong> <span id="checksum"></span></p>
-                    <button onclick="copyToClipboard('checksum', this)" class="bg-blue-500 px-3 py-1 text-white">Copy</button>
+                    <button onclick="copyToClipboard('checksum', this)" class="bg-green-700 px-3 py-1 text-white">Copy</button>
                 </div>
                 <div class="flex items-center justify-between">
                     <p class="text-gray-300"><strong>MD5:</strong> <span id="md5"></span></p>
-                    <button onclick="copyToClipboard('md5', this)" class="bg-blue-500 px-3 py-1 text-white">Copy</button>
+                    <button onclick="copyToClipboard('md5', this)" class="bg-green-700 px-3 py-1 text-white">Copy</button>
                 </div>
             </div>
-            <a id="download-link" href="#" class="mt-4 block text-center bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">Fetching link...</a>
-            <a id="device-changelog" href="#" class="mt-2 block text-center bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600">Device Flashing Instructions & Changelogs</a>
-            <a id="paypal-link" href="#" class="mt-2 block text-center bg-yellow-500 text-white px-4 py-2 rounded shadow hover:bg-yellow-600">Donate via PayPal</a>
-            <a id="recovery-link" href="#" class="mt-2 block text-center bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">Recovery Download</a>
-            <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="mt-2 block text-center bg-pink-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">Previous Builds</a>
+            <a id="download-link" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Fetching link...</a>
+            <a id="device-changelog" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Device Flashing Guide and Changelogs</a>
+            <a id="paypal-link" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Donate Via PayPal</a>
+            <a id="recovery-link" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Recovery Download</a>
+            <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Previous Builds</a>
         </div>
     </div>
 </body>
