@@ -1,0 +1,91 @@
+  body {
+    background-color: black;
+    color: white;
+  }
+  .device-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    display: block;
+    margin: 0 auto 15px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  .device-card {
+    padding: 15px;
+    border-radius: 10px;
+    background: #1c1c1c;
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  }
+  .device-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .device-card p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+  .hash {
+    font-size: 0.8rem;
+    word-break: break-word;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Reduce spacing between buttons */
+    flex-wrap: wrap; /* Ensures buttons wrap properly on smaller screens */
+  }
+
+  .btn-container a,
+  .btn-container button,
+  .btn-container .dropdown {
+    flex: 1;
+    min-width: 120px; /* Ensures uniform width */
+    max-width: 150px;
+    width: 150px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 45px; /* Ensures uniform height */
+  }
+
+  /* Ensure dropdown buttons also follow width rules */
+  .btn-container .dropdown .btn {
+    /*width: 100%;*/
+    width: 150px !important; /* Force width match */
+    max-width: 150px;
+  }
+
+  .btn-success i, .btn-danger i, .btn-info i, .donation-btn i {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .btn-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn-container a,
+    .btn-container button,
+    .btn-container .dropdown {
+      width: 120%; /* Full width on smaller screens */
+      max-width: 120px;
+    }
+  }
+
+  .header.scrolled {
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: backdrop-filter 0.3s, background-color 0.3s;
+  }

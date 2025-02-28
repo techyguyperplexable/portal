@@ -1,0 +1,169 @@
+/* Main */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s;
+  background-color: black !important;
+  color: white !important;
+  text-align: center;
+  padding: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Screenshot Slider */
+.screenshot-slider {
+  padding: 50px 0;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+.carousel img {
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  width: 30%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Smooth transition effect for sliding */
+.carousel-item {
+  display: none; /* Hide all initially */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  animation: slide 0.8s ease-in-out;
+}
+
+.carousel-item.active {
+  display: flex !important;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Add a parallax effect */
+.carousel-item.active img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Ensure images are properly displayed */
+.carousel-item img {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh; /* Prevents the image from exceeding the viewport height */
+  height: auto;
+  width: auto;
+  margin: auto;
+  object-fit: contain; /* Ensure full image is visible */
+}
+
+/* Make images bigger on mobile */
+@media (max-width: 768px) {
+  .carousel img {
+    height: 100%;
+  }
+}
+
+/* Add smooth sliding animation */
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.statistics {
+  padding: 50px 0;
+  background-color: #000;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-4 {
+  flex: 1 1 300px;
+  max-width: 400px;
+  padding: 10px;
+}
+
+/* Ensure position text is fully white */
+.card .position,
+.card p {
+  color: white !important;
+  opacity: 1 !important;
+  font-weight: bold; /* Make it more visible */
+}
+
+/* Change social icons to white */
+.card .bi {
+  font-size: 1.5rem;
+  margin: 0 5px;
+  color: white !important; /* Ensure icons are white */
+  transition: color 0.3s;
+}
+
+.card .bi:hover {
+  color: #007bff !important; /* Add hover effect */
+}
+
+/* Fix GitHub & Telegram icons */
+.card .social-links a i {
+  color: white !important;
+}
+
+/* End Main */
