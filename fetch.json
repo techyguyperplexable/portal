@@ -11,6 +11,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/veux.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-x4-pro-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/veux.txt"
   },
   "sunny": {
@@ -25,6 +26,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/sunny.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-redmi-note10-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sunny.txt"
   },
   "cepheus": {
@@ -39,6 +41,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/cepheus.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-mi-9-2.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/cepheus.txt"
   },
   "Pong": {
@@ -53,6 +56,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/Pong.json"
     ],
     "device_avatar": "assets/img/devices/nothing-phone2-1_.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/Pong.txt"
   },
   "ginkgo": {
@@ -67,6 +71,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/ginkgo.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-redmi-note-8-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/ginkgo.txt"
   },
   "mondrian": {
@@ -81,6 +86,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/mondrian.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-f5-pro-2.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/mondrian.txt"
   },
   "surya": {
@@ -95,6 +101,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/surya.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-x3-nfc-2.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/surya.txt"
   },
   "topaz": {
@@ -109,6 +116,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/topaz.json"
     ],
     "device_avatar": "assets/img/devices/redmi-note-12-4g-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/topaz.txt"
   },
   "dubai": {
@@ -123,6 +131,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/dubai.json"
     ],
     "device_avatar": "assets/img/devices/motorola-edge-30-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dubai.txt"
   },
   "redwood": {
@@ -137,6 +146,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/redwood.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-x5-pro-5g-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/redwood.txt"
   },
   "sky": {
@@ -151,6 +161,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/sky.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-redmi-12r-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sky.txt"
   },
   "akita": {
@@ -165,6 +176,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/akita.json"
     ],
     "device_avatar": "assets/img/devices/google-pixel-8a-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/akita.txt"
   },
   "eqs": {
@@ -179,6 +191,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/eqs.json"
     ],
     "device_avatar": "assets/img/devices/motorola-edge30-ultra-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/eqs.txt"
   },
   "munch": {
@@ -193,6 +206,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/munch.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-f4-5g-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/munch.txt"
   },
   "oriole": {
@@ -207,6 +221,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/oriole.json"
     ],
     "device_avatar": "assets/img/devices/google-pixel-6-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/oriole.txt"
   },
   "raven": {
@@ -221,6 +236,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/raven.json"
     ],
     "device_avatar": "assets/img/devices/google-pixel-6-pro-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/raven.txt"
   },
   "shiba": {
@@ -235,6 +251,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/shiba.json"
     ],
     "device_avatar": "assets/img/devices/google-pixel-8-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/shiba.txt"
   },
   "tangorpro": {
@@ -249,6 +266,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/tangorpro.json"
     ],
     "device_avatar": "assets/img/devices/google-pixel-tablet-10.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/tangorpro.txt"
   },
   "wly": {
@@ -263,6 +281,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/wly.json"
     ],
     "device_avatar": "assets/img/devices/oneplus-10-pro-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/wly.txt"
   },
   "a73xq": {
@@ -277,6 +296,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/a73xq.json"
     ],
     "device_avatar": "assets/img/devices/samsung-galaxy-a73-5g-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt"
   }
 }
