@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Collapse</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-black text-white p-6">
+    <section id="changelog-section" class="w-full max-w-3xl bg-gray-900 p-6 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 mb-3">
+        <button id="toggleButton" class="w-full text-left p-3 bg-gray-700 text-white rounded-lg font-semibold transition-all duration-300 hover:bg-gray-600 active:scale-95">
+            Source Changelogs
+        </button>
+        <div id="content" class="mt-2 max-h-96 overflow-auto border-t border-gray-700 pt-2 hidden fade-enter">
+            <pre id="changelogContent" class="text-gray-300 whitespace-pre-wrap p-2"></pre>
+        </div>
+    </section>
+
+    <section id="faq-section" class="w-full max-w-3xl bg-gray-900 p-6 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 mt-0">
+        <button id="faqToggle" class="w-full text-left p-3 bg-gray-700 text-white rounded-lg font-semibold transition-all duration-300 hover:bg-gray-600 active:scale-95">
+            Show FAQs
+        </button>
+        <div id="faqContent" class="mt-2 hidden border-t border-gray-700 pt-2 fade-enter">
+            <ul class="list-disc pl-5 text-gray-300">
+                <li><strong>Why is my Android device not updating?</strong> - Ensure you have sufficient storage and battery before updating.</li>
+                <li><strong>How do I report a bug?</strong> - Use the official issue tracker or community forums.</li>
+                <li><strong>Will this work on my phone?</strong> - Check the official compatibility list.</li>
+                <li><strong>How do I install the update?</strong> - Follow the step-by-step installation guide on the official website.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        async function fetchData_changelog() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/RisingOS-Revived/risingOS_changelogs/refs/heads/fifteen/README.md');
+                let text = await response.text();
+
+                text = text.replace(/^##\s*/gm, '')
+                           .replace(/^---+$/gm, '')
+                           .replace(/\*\*([^*]+)\*\*/g, '$1')
+                           .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+                           .replace(/`([^`]+)`/g, '$1')
+                           .trim();
+
+                document.getElementById('changelogContent').textContent = text;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        document.getElementById('toggleButton').addEventListener('click', function () {
+            const content = document.getElementById('content');
+            content.classList.toggle('hidden');
+            content.classList.toggle('fade-enter-active');
+            this.textContent = content.classList.contains('hidden') ? "Source Changelog" : 'Hide Changelog';
+        });
+
+        document.getElementById('faqToggle').addEventListener('click', function () {
+            const faqContent = document.getElementById('faqContent');
+            faqContent.classList.toggle('hidden');
+            faqContent.classList.toggle('fade-enter-active');
+            this.textContent = faqContent.classList.contains('hidden') ? 'Show FAQs' : 'Hide FAQs';
+        });
+
+        fetchData_changelog();
+    </script>
+</body>
+</html>

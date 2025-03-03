@@ -77,8 +77,8 @@
             </a>` : '';
 
         let downloadButton = device.device_changelog ? `
-            <a href="https://risingos-revived-devices.github.io/portal/downloads.html?codename=${device.codename}" target="_blank" class="btn btn-success">
-              Download Builds</i>
+            <a href="downloads.html?codename=${device.codename}" target="_blank" class="btn btn-success">
+              Get Builds</i>
             </a>` : '';
 
         let statusText = device.status.toUpperCase();
@@ -88,10 +88,11 @@
 
   card.innerHTML = `
     <div class="device-card text-center">
+      <span class="status">${statusIcon} ${statusText}</span>
+      <span class="codename">${device.codename}</span>
       <img src="${device.device_avatar}" alt="${device.device}" class="device-avatar">
-      <h3>${device.oem} ${device.device} (${device.codename})</h3>
+      <h3>${device.oem} ${device.device}</h3>
       <p><strong>Maintainer:</strong> ${device.maintainer}</p>
-      <p><strong>Status:</strong> ${statusIcon} ${statusText}</p>
       <div class="btn-container">
         ${downloadButton}
       </div>

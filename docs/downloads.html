@@ -67,6 +67,16 @@
             }
         }
 
+        function formatTimestamp(timestamp) {
+            const date = new Date(timestamp * 1000);
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options) + `, ${date.toLocaleTimeString('en-US')}`;
+        }
+        function goHome() {
+            window.location.href = "index.html";  // Change to your actual home page
+        }
+
+
         function loadDeviceData(device) {
             document.getElementById('device-name').textContent = device.device;
             document.getElementById('version').textContent = device.version;
@@ -77,14 +87,12 @@
             document.getElementById('oem').textContent = device.oem;
             document.getElementById('download-link').textContent = 'Download Now';
             document.getElementById('device-image').src = device.device_avatar;
+            document.getElementById('maintainer-image').src = device.maintainer_avatar;
             document.getElementById('filesize').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
-            document.getElementById('checksum').textContent = device.sha256.substring(0, 10) + '...RisingOS_Revived';
-            document.getElementById('checksum').dataset.fullValue = device.sha256;
-            document.getElementById('md5').textContent = device.md5.substring(0, 10) + '...RisingOS_Revived';
-            document.getElementById('md5').dataset.fullValue = device.md5;
             document.getElementById('device-changelog').href = device.device_changelog;
             document.getElementById('paypal-link').href = device.paypal;
             document.getElementById('recovery-link').href = device.recovery;
+            document.getElementById('timestamp').textContent = formatTimestamp(device.timestamp);
             document.getElementById('card').classList.remove('hidden');
         }
 
@@ -110,9 +118,287 @@
         button, a {
             border-radius: 15px !important;
         }
+        .card {
+            position: relative;
+            background: #111;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            overflow: hidden;
+        }
 
-    </style>
+        .top-left-buttons {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 5px; /* Space between buttons */
+        }
+
+        .top-left-buttons button {
+            background: rgba(0, 255, 0, 0.2);
+            color: white;
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            padding: 4px 8px; /* Smaller size */
+            font-size: 12px; /* Smaller font */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .top-left-buttons button:hover {
+            background: rgba(0, 255, 0, 0.4);
+        }
+
+    /* Codename Badge - Make It More Compact */
+    .codename {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 4px 8px;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .codename:hover {
+        transform: scale(1.05);
+        background: rgb(30, 30, 30);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Version and Build Type - Neon Effect */
+    .version-info {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+    }
+
+    .version-info .version {
+        color: #36ff91;
+        font-weight: 900;
+    }
+
+    .version-info .build-type {
+        color: #ff5252;
+        font-weight: 900;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+  .version-container {
+      display: inline-block;
+      background: linear-gradient(135deg, #222, #111); /* Dark gradient background */
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1em;
+      font-family: 'Orbitron', sans-serif; /* Futuristic font */
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: white;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .version-container:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  }
+
+  #version {
+      color: #00ff99; /* Neon green for a futuristic look */
+  }
+
+  #build-type {
+      color: #ff4444; /* Neon red for contrast */
+  }
+
+  @media (max-width: 768px) { /* For tablets and smaller screens */
+    .codename {
+        position: absolute;
+        top: 5px;
+        right: 8px;
+        padding: 3px 6px;
+        font-size: 0.7em; /* Smaller font */
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .codename:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Modern Dropdown */
+#variant-dropdown {
+    background: #1a1a1a;
+    color: white;
+    border: 2px solid #2ecc71;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+#variant-dropdown:hover {
+    border-color: #27ae60;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.7);
+}
+
+/* File Details - Sleek Look */
+.text-gray-300 {
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+.text-gray-300 strong {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #00ff99;
+}
+
+.maintainer-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.maintainer-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #00ff99;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.8); /* Adds a glow effect */
+}
+
+.info-text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 16px;
+}
+
+.info-text strong {
+    color: #00ff99;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-size: 18px; /* Slightly larger for emphasis */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 255, 153, 0.7); /* Subtle neon effect */
+}
+
+
+#maintainer-image {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid #00ff99;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+#maintainer-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.maintainer-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.info-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+
+
+
+/* Responsive: Stack on small screens */
+@media (max-width: 600px) {
+    .info-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .info-container p {
+        margin-bottom: 5px;
+    }
+}
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    background: transparent; /* Transparent background */
+    border: 2px solid #00ff99; /* Green border */
+    color: #00ff99; /* Green text color */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect */
+.custom-button:hover {
+    background: #00ff99; /* Green background on hover */
+    color: black; /* Change text color */
+    transform: scale(1.05);
+}
+
+/* Icons should match the text color */
+.custom-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor; /* Inherits text color */
+}
+
+</style>
 </head>
+
 <body class="bg-black flex items-center justify-center min-h-screen">
     <video id="video-bg" autoplay loop muted>
         <source src="assets/img/bgtest.mp4" type="video/mp4">
@@ -123,29 +409,73 @@
          <p class="font-bold">Disclaimer:</p>
          <p>We highly recommend following the official flashing instructions provided by your device maintainer to avoid potential issues. Please note that we are not responsible for any damage, malfunctions, or data loss that may occur. Proceed with caution and at your own risk.</p>
      </div>
-        <div id="card" class="bg-black shadow-xl shadow-blue-500/50 rounded-lg p-6 text-white hidden w-full">
-            <h1 class="text-2xl font-bold mb-4 text-center">Download for <span id="oem"></span> <span id="device-name"></span> (<span id="code-name" style="color:green;"></span>)</h1>
-            <img id="device-image" src="" alt="Device Image" class="w-48 mx-auto mb-4 rounded">
-            <h3 class="text-red-300" style="text-align:center;">(<strong><span id="version"></span> | <span id="build-type"></span></strong>)</h3><br>
-            <div class="text-left space-y-2">
-                <label for="variant-dropdown" class="text-gray-300">Select Variant:</label>
-                <select id="variant-dropdown" class="bg-gray-800 text-white px-3 py-2 rounded w-full hidden"></select>
-                <p class="text-gray-300"><strong>Maintainer:</strong> <span id="maintainer"></span></p>
-                <p class="text-gray-300"><strong>File Size:</strong> <span id="filesize"></span></p>
-                <div class="flex items-center justify-between">
-                    <p class="text-gray-300"><strong>SHA-256:</strong> <span id="checksum"></span></p>
-                    <button onclick="copyToClipboard('checksum', this)" class="bg-green-700 px-3 py-1 text-white">Copy</button>
-                </div>
-                <div class="flex items-center justify-between">
-                    <p class="text-gray-300"><strong>MD5:</strong> <span id="md5"></span></p>
-                    <button onclick="copyToClipboard('md5', this)" class="bg-green-700 px-3 py-1 text-white">Copy</button>
-                </div>
-            </div>
-            <a id="download-link" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Fetching link...</a>
-            <a id="device-changelog" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Device Flashing Guide and Changelogs</a>
-            <a id="paypal-link" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Donate Via PayPal</a>
-            <a id="recovery-link" href="#" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Recovery Download</a>
-            <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="mt-2 block text-center bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Previous Builds</a>
+<div id="card" class="bg-black shadow-xl shadow-blue-500/50 rounded-lg p-6 text-white hidden w-full relative">
+  <div class="top-left-buttons">
+       <button onclick="goHome()">Back to Home</button>
+   </div>
+ <div class="codename" id="codename"><span id="code-name"></span></div><br>
+
+ <h1 class="text-2xl font-bold mb-4 text-center">
+     Download for <span id="oem"></span> <span id="device-name"></span>
+ </h1>
+
+ <img id="device-image" src="" alt="Device Image" class="w-48 mx-auto mb-4 rounded">
+
+ <h3 class="version-container text-center">
+     <strong><span id="version"></span> | <span id="build-type"></span></strong>
+ </h3>
+
+
+ <br>
+
+ <div class="text-left space-y-2">
+     <label for="variant-dropdown" class="text-gray-300">Select Variant:</label>
+     <select id="variant-dropdown" class="bg-gray-800 text-white px-3 py-2 rounded w-full hidden"></select>
+
+     <div class="info-container">
+     <div class="info-left">
+       <img id="maintainer-image" alt="Maintainer" class="w-48 mx-auto mb-4 rounded">
+       <p><strong>Maintainer:</strong> <span id="maintainer" class="highlight"></span></p>
+     </div>
+     <div class="info-right">
+       <p><strong>Build Date:</strong><br><span id="timestamp" class="highlight"></span></p>
+       <p><strong>File Size:</strong><br><span id="filesize" class="highlight"></span></p>
+     </div>
+ </div>
+
+     <!-- Include Lucide Icons -->
+     <script src="https://unpkg.com/lucide@latest"></script>
+
+     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+       <a id="download-link" href="#" class="custom-button">
+           <svg data-lucide="cloud-download"></svg> Download Now
+       </a>
+       <a id="device-changelog" href="#" class="custom-button">
+           <svg data-lucide="file-text"></svg> Device Changelogs
+       </a>
+       <a id="paypal-link" href="#" class="custom-button">
+           <svg data-lucide="dollar-sign"></svg> Donate Via PayPal
+       </a>
+       <a id="recovery-link" href="#" class="custom-button">
+           <svg data-lucide="refresh-cw"></svg> Recovery Download
+       </a>
+       <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="custom-button sm:col-span-2">
+           <svg data-lucide="archive"></svg> Previous Builds
+       </a>
+   </div>
+
+
+     <script>
+         // Initialize Lucide icons after the page loads
+         document.addEventListener("DOMContentLoaded", function () {
+             lucide.createIcons();
+         });
+     </script>
+
+ </div>
+</div>
+
+
         </div>
     </div>
 </body>

@@ -76,9 +76,9 @@
               <i class="bi bi-tools"></i>
             </a>` : '';
 
-        let changelogButton = device.device_changelog ? `
-            <a href="${device.device_changelog}" target="_blank" class="btn btn-info">
-              <i class="bi bi-file-text"></i>
+        let downloadButton = device.device_changelog ? `
+            <a href="https://risingos-revived-devices.github.io/portal/downloads.html?codename=${device.codename}" target="_blank" class="btn btn-success">
+              Download Builds</i>
             </a>` : '';
 
         let statusText = device.status.toUpperCase();
@@ -93,10 +93,7 @@
       <p><strong>Maintainer:</strong> ${device.maintainer}</p>
       <p><strong>Status:</strong> ${statusIcon} ${statusText}</p>
       <div class="btn-container">
-        ${variantButtons}
-        ${recoveryButton}
-        ${changelogButton}
-        ${donationButton}
+        ${downloadButton}
       </div>
     </div>`;
 
