@@ -1,5 +1,9 @@
 import json
 import requests
+#####################################################
+#     Fetch data from the JSON files in OTA repo    #
+#          Script created by: @skwel24              #
+#####################################################
 
 # URL to fetch the list of device JSON data
 data_source_url = "https://raw.githubusercontent.com/RisingOS-Revived-devices/RisingOS_Web/refs/heads/main/fetch.json"
