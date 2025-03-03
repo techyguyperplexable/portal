@@ -37,6 +37,7 @@
                         dropdown.appendChild(option);
                     });
 
+                    updateFlashGuideLink(deviceVariants[0].variant, codename);
                     updatePreviousBuildsLink(deviceVariants[0].variant, codename);
                     loadDeviceData(deviceVariants[0]);
 
@@ -44,6 +45,7 @@
                         const selectedVariant = dropdown.value;
                         const selectedDevice = deviceVariants.find(d => d.variant === selectedVariant);
                         loadDeviceData(selectedDevice);
+                        updateFlashGuideLink(selectedVariant, codename);
                         updatePreviousBuildsLink(selectedVariant, codename);
                     });
                 } else {
@@ -63,6 +65,17 @@
                     previousBuildsLink.href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${variant.toUpperCase()}/${codename}`;
                 } else {
                     previousBuildsLink.href = "https://sourceforge.net/projects/risingos-revived/files/6.x/";
+                }
+            }
+        }
+
+        function updateFlashGuideLink(variant, codename) {
+            const flashguideLink = document.getElementById('flash-guide');
+            if (flashguideLink) {
+                if (variant && codename) {
+                    flashguideLink.href = `https://github.com/rising-dpenra/official_devices/blob/fifteen/OTA/flashguide/${codename}.md`;
+                } else {
+                    flashguideLink.href = "https://github.com/rising-dpenra/official_devices/blob/fifteen/OTA/flashguide/";
                 }
             }
         }
@@ -450,8 +463,8 @@
         <p><strong>Maintainer</strong><br><br><span id="maintainer" class="dark-container"></span></p>
     </div>
     <div class="info-right">
-        <p><strong>Build Type</strong><br><br><span id="build" class="dark-container"></span></p>
         <p><strong>Build Date</strong><br><br><span id="timestamp" class="dark-container"></span></p>
+        <p><strong>Build Type</strong><br><br><span id="build" class="dark-container"></span></p>
         <p><strong>File Size</strong><br><br><span id="filesize" class="dark-container"></span></p>
     </div>
 </div>
@@ -461,7 +474,7 @@
 
      <!-- Include Lucide Icons -->
      <script src="https://unpkg.com/lucide@latest"></script>
-
+     <br>
      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
        <a id="download-link" href="#" class="custom-button">
            <svg data-lucide="cloud-download"></svg> Download Now
@@ -469,13 +482,16 @@
        <a id="device-changelog" href="#" class="custom-button">
            <svg data-lucide="file-text"></svg> Device Changelogs
        </a>
-       <a id="paypal-link" href="#" class="custom-button">
-           <svg data-lucide="dollar-sign"></svg> Donate Via PayPal
+       <a id="flash-guide" href="https://github.com/rising-dpenra/official_devices/blob/fifteen/OTA/flashguide/" class="custom-button">
+           <svg data-lucide="clipboard-list"></svg> Flashing Guide
        </a>
        <a id="recovery-link" href="#" class="custom-button">
            <svg data-lucide="refresh-cw"></svg> Recovery Download
        </a>
-       <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="custom-button sm:col-span-2">
+       <a id="paypal-link" href="#" class="custom-button">
+           <svg data-lucide="dollar-sign"></svg> Donate Via PayPal
+       </a>
+       <a id="previous-builds" href="https://sourceforge.net/projects/risingos-revived/files/6.x/" class="custom-button">
            <svg data-lucide="archive"></svg> Previous Builds
        </a>
    </div>

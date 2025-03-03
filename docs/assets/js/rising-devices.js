@@ -77,7 +77,7 @@
             </a>` : '';
 
         let downloadButton = device.device_changelog ? `
-            <a href="downloads.html?codename=${device.codename}" target="_blank" class="btn btn-success">
+            <a href="downloads.html?codename=${device.codename}" class="btn btn-success">
               Get Builds</i>
             </a>` : '';
 
