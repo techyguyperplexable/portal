@@ -15,7 +15,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/veux.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://t.me/veuxplayground/2950"
+        "recovery": "https://t.me/veuxplayground/2950",
+        "timestamp": 1739541170
     },
     {
         "status": "active",
@@ -33,7 +34,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/veux.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://t.me/veuxplayground/2950"
+        "recovery": "https://t.me/veuxplayground/2950",
+        "timestamp": 1739558899
     },
     {
         "status": "active",
@@ -51,7 +53,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/veux.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://t.me/veuxplayground/2950"
+        "recovery": "https://t.me/veuxplayground/2950",
+        "timestamp": 1739555928
     },
     {
         "status": "active",
@@ -69,7 +72,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sunny.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/sunny/RisingOS_Revived-6.2.1-STABLE/boot.img/download"
+        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/sunny/RisingOS_Revived-6.2.1-STABLE/boot.img/download",
+        "timestamp": 1739514782
     },
     {
         "status": "active",
@@ -87,7 +91,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sunny.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/sunny/RisingOS_Revived-6.2.1-STABLE/boot.img/download"
+        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/sunny/RisingOS_Revived-6.2.1-STABLE/boot.img/download",
+        "timestamp": 1739481343
     },
     {
         "status": "active",
@@ -105,7 +110,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/cepheus.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download"
+        "recovery": "https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download",
+        "timestamp": 1739361872
     },
     {
         "status": "active",
@@ -123,7 +129,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/cepheus.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download"
+        "recovery": "https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download",
+        "timestamp": 1739369581
     },
     {
         "status": "active",
@@ -141,7 +148,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/Pong.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739385315
     },
     {
         "status": "active",
@@ -159,7 +167,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/Pong.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739370257
     },
     {
         "status": "active",
@@ -177,7 +186,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/ginkgo.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739321681
     },
     {
         "status": "active",
@@ -195,7 +205,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/ginkgo.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739315869
     },
     {
         "status": "active",
@@ -213,7 +224,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/mondrian.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://t.me/keoshlapgroup/14198"
+        "recovery": "https://t.me/keoshlapgroup/14198",
+        "timestamp": 1739733841
     },
     {
         "status": "active",
@@ -231,7 +243,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/mondrian.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://t.me/keoshlapgroup/14198"
+        "recovery": "https://t.me/keoshlapgroup/14198",
+        "timestamp": 1739709518
     },
     {
         "status": "active",
@@ -249,7 +262,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/surya.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "OFFICIAL",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1740041516
     },
     {
         "status": "active",
@@ -267,7 +281,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/surya.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1740047773
     },
     {
         "status": "active",
@@ -285,7 +300,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/surya.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "OFFICIAL",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1740037179
     },
     {
         "status": "active",
@@ -303,7 +319,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/topaz.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739431288
     },
     {
         "status": "active",
@@ -321,7 +338,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dubai.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1740108838
     },
     {
         "status": "active",
@@ -339,7 +357,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/redwood.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739946135
     },
     {
         "status": "active",
@@ -357,7 +376,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/redwood.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739949557
     },
     {
         "status": "active",
@@ -375,7 +395,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/redwood.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739942873
     },
     {
         "status": "active",
@@ -393,7 +414,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sky.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739453955
     },
     {
         "status": "active",
@@ -411,7 +433,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/akita.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739650374
     },
     {
         "status": "active",
@@ -429,7 +452,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/eqs.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1738937371
     },
     {
         "status": "active",
@@ -447,7 +471,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/munch.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/munch/twrp-3.7.1_12-v9.0_A15-munch-skkk.img/download"
+        "recovery": "https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/munch/twrp-3.7.1_12-v9.0_A15-munch-skkk.img/download",
+        "timestamp": 1740142058
     },
     {
         "status": "active",
@@ -465,7 +490,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/munch.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": "https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/munch/twrp-3.7.1_12-v9.0_A15-munch-skkk.img/download"
+        "recovery": "https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/munch/twrp-3.7.1_12-v9.0_A15-munch-skkk.img/download",
+        "timestamp": 1740152697
     },
     {
         "status": "active",
@@ -483,7 +509,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/oriole.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739385754
     },
     {
         "status": "active",
@@ -501,7 +528,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/raven.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739381748
     },
     {
         "status": "active",
@@ -519,7 +547,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/shiba.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739649232
     },
     {
         "status": "active",
@@ -537,7 +566,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/tangorpro.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1739644963
     },
     {
         "status": "inactive",
@@ -555,7 +585,8 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/wly.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "STABLE",
-        "recovery": ""
+        "recovery": "",
+        "timestamp": 1738845843
     },
     {
         "status": "active",
@@ -573,6 +604,7 @@
         "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt",
         "version": "6.2.1-Boundless",
         "buildtype": "Stable",
-        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/recovery/20250221-recovery.img"
+        "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/recovery/20250221-recovery.img",
+        "timestamp": 1740163143
     }
 ]
