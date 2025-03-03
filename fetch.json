@@ -318,7 +318,7 @@
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt",
     "build": "userdebug"
-  }
+  },
   "marble": {
     "status": "active",
     "maintainer": "SharmagRit",
