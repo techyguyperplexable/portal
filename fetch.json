@@ -11,7 +11,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/veux.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-x4-pro-1.png",
-    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/93442834?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/veux.txt",
     "build": "userdebug"
   },
@@ -27,7 +27,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/sunny.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-redmi-note10-1.png",
-    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/36838592?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sunny.txt",
     "build": "userdebug"
   },
@@ -139,7 +139,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/dubai.json"
     ],
     "device_avatar": "assets/img/devices/motorola-edge-30-1.png",
-    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/121305132?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dubai.txt",
     "build": "userdebug"
   },
@@ -317,6 +317,22 @@
     "device_avatar": "assets/img/devices/samsung-galaxy-a73-5g-1.png",
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a73xq.txt",
+    "build": "userdebug"
+  }
+  "marble": {
+    "status": "active",
+    "maintainer": "SharmagRit",
+		"oem": "POCO",
+		"device": "POCO F5",
+    "codename": "marble",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/marble.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/marble.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/marble.json"
+    ],
+    "device_avatar": "assets/img/devices/xiaomi-poco-f5-2.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/87909274?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/marble.txt",
     "build": "userdebug"
   }
 }
