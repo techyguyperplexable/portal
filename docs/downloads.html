@@ -961,7 +961,7 @@
             });
             document.getElementById('file-size').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
             document.getElementById('download-link').href = device.download;
-            document.getElementById('changelog-link').href = device.changelog;
+            document.getElementById('changelog-link').href = device.device_changelog;
             document.getElementById('guide-link').href = `https://github.com/rising-dpenra/official_devices/blob/fifteen/OTA/flashguide/${device.codename}.md`;
             document.getElementById('previous-builds').href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${device.variant.toUpperCase()}/${device.codename}`;
             document.getElementById('recovery-link').href = device.recovery;
