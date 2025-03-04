@@ -782,6 +782,26 @@
             background: #1a1a1a;
             border-radius: 12px;
         }
+
+        h2.screenshot-header, h2, h2.text-center {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        h2.screenshot-header::after, h2::after, h2.text-center::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 4px;
+            background-color: #007BFF;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px; /* Increased spacing below the header */
+            transition: background-color 0.3s;
+        }
+        h2.screenshot-header:hover::after, h2:hover::after, h2.text-center:hover::after {
+            background-color: green;
+        }
     </style>
 </head>
 <body>

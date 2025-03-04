@@ -60,10 +60,10 @@
     .screenshot-grid img:last-child {
       margin-right: 0;
     }
-    .screenshot-grid img:hover {
+    /* .screenshot-grid img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Glowing effect */
-    }
+    } */
     .screenshot-header {
         text-align: center;
         margin: 20px 0;
@@ -132,25 +132,33 @@
         color: green;
         font-weight: bold;
     }
-    h2.screenshot-header, h2, h2.text-center {
-        position: relative;
-        margin-bottom: 20px;
+
+    /* Screenshot image styles */
+    .slide img {
+        width: 60%; /* Adjusted for mobile view to be 10% smaller */
+        height: auto;
     }
-    h2.screenshot-header::after, h2::after, h2.text-center::after {
-        content: '';
-        display: block;
-        width: 12%;
-        height: 7px;
-        background-color: green;
-        margin-top:20%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -5px;
-        transition: background-color 0.3s;
+
+    @media (min-width: 768px) {
+        .slide img {
+            width: 65%; /* Adjusted size for web view */
+        }
     }
-    h2.screenshot-header:hover::after, h2:hover::after, h2.text-center:hover::after {
-        background-color: green;
+
+    .badge-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+    .sf-root {
+        margin: 0 10px; /* Space between badges */
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .sf-root:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Glowing effect */
     }
   </style>
 
@@ -206,7 +214,7 @@
     <!-- Screenshot Grid Section -->
    <section id="screenshot-grid" class="screenshot-grid section">
      <div class="container text-center">
-       <h2 class="screenshot-header">Screenshots</h2>
+       <h3 class="screenshot-header">Screenshots</h3>
        <p>Explore the stunning visuals of <span class="highlight">RisingOS Revived</span> in action, showcasing its features and user interface.</p>
        <div class="slider">
         <div class="slides">
@@ -239,8 +247,30 @@
    <!-- Statistics Section -->
    <section id="statistics" class="statistics section text-center">
      <div class="container">
-       <h2>Statistics <span class="highlight">Metrics</span></h2><br>
+       <h3>Statistics <span class="highlight">Metrics</span></h3><br>
        <p>Track the downloads per day, per operating system, and by country.</p>
+       <div class="badge-container">
+        <!-- Begin SF Tag -->
+        <div class="sf-root" data-id="3846893" data-badge="oss-users-love-us-black" style="width:125px">
+          <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
+        </div>
+        <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3846893';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+        </script>
+        <!-- End SF Tag -->
+           <!-- SourceForge Badge Integration -->
+        <div class="sf-root" data-id="3846893" data-badge="oss-rising-star-black" data-metadata="achievement=oss-rising-star" style="width:125px">
+          <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
+        </div>
+        <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3846893';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
+        <!-- End SourceForge Badge Integration -->
+         <!-- Begin SF Tag -->
+        <div class="sf-root" data-id="3846893" data-badge="oss-sf-favorite-black" data-metadata="achievement=oss-sf-favorite" style="width:125px">
+          <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
+        </div>
+        <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3846893';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+        </script>
+        <!-- End SF Tag -->
+       </div>
        <div class="downloads-container">
          <!--<h3>Total Downloads</h3>-->
          <p id="totalDownloads" class="downloads-value">Loading...</p>
@@ -263,7 +293,7 @@
 
   <section id="team" class="team section">
     <div class="container my-5">
-    <h2 class="text-center mb-4">Core Team Members</h2>
+    <h3 class="text-center mb-4">Core Team Members</h3>
     <p class="text-center mb-4">Meet the dedicated individuals behind our project, working tirelessly to bring you the best experience possible.</p>
     <div class="row row-cols-1 row-cols-md-5 justify-content-center gap-3" id="team-container"></div>
   </div>
@@ -341,6 +371,37 @@
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
     }, 5000);
+  </script>
+
+  <script>
+    // Swipe functionality for mobile
+    let startX;
+    let endX;
+    const slides = document.querySelectorAll('.slide');
+
+    slides.forEach(slide => {
+        slide.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+
+        slide.addEventListener('touchmove', e => {
+            endX = e.touches[0].clientX;
+        });
+
+        slide.addEventListener('touchend', () => {
+            if (startX > endX + 50) {
+                // Swipe left
+                // Add logic to show next slide
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            } else if (startX < endX - 50) {
+                // Swipe right
+                // Add logic to show previous slide
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+        });
+    });
   </script>
 
 </body>
