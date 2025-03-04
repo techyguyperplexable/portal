@@ -191,6 +191,44 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
+        .version-container {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1em;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.08),
+                inset 0 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .version-container:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.15),
+                0 2px 4px rgba(0, 0, 0, 0.12),
+                inset 0 1px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #202020, #0f0f0f);
+        }
+
+        .version-container:active {
+            transform: translateY(1px);
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                0 1px 2px rgba(0, 0, 0, 0.08),
+                inset 0 1px rgba(255, 255, 255, 0.03);
+        }
 
         @media (max-width: 640px) {
             .action-buttons {
