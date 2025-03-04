@@ -371,13 +371,10 @@
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
     }, 5000);
-  </script>
 
-  <script>
     // Swipe functionality for mobile
     let startX;
     let endX;
-    const slides = document.querySelectorAll('.slide');
 
     slides.forEach(slide => {
         slide.addEventListener('touchstart', e => {
@@ -391,12 +388,10 @@
         slide.addEventListener('touchend', () => {
             if (startX > endX + 50) {
                 // Swipe left
-                // Add logic to show next slide
                 currentIndex = (currentIndex + 1) % slides.length;
                 showSlide(currentIndex);
             } else if (startX < endX - 50) {
                 // Swipe right
-                // Add logic to show previous slide
                 currentIndex = (currentIndex - 1 + slides.length) % slides.length;
                 showSlide(currentIndex);
             }
