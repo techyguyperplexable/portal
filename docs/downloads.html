@@ -79,14 +79,51 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 255, 0, 0.1);
+            width: 100%;  
+            max-width: 600px;  
+            margin: 0 auto;  
+            padding: 1rem;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+        }
+
+        .card {
+            width: 100%;  /* Ensure card takes full width */
+            max-width: 600px;  /* Set a max width for larger screens */
+            margin: 0 auto;  /* Center the card */
+            padding: 1rem;  /* Add some padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Optional shadow for better visibility */
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 0.5rem;  /* Reduce padding on mobile */
+            }
         }
 
         .device-info-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            flex: 0 1 48%;
+            margin-bottom: 10px;
+            margin-bottom: 1rem;  /* Add margin for spacing between items */
+        }
+
+        @media (max-width: 768px) {
+            .info-item {
+                font-size: 1rem;  /* Adjust font size for better visibility on mobile */
+                text-align: center; /* Center text in mobile view */
+            }
+        }
+
+        @media (min-width: 769px) {
+            .info-item {
+                font-size: 1.1rem;  /* Adjust font size for larger screens */
+            }
         }
 
         .device-header {
@@ -159,39 +196,23 @@
         }
 
         .action-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            width: 100%;
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            justify-content: center; /* Center buttons */
+            gap: 1rem; /* Space between buttons */
         }
 
         .action-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-align: center;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-            min-height: 3rem;
-            white-space: nowrap;
+            flex: 1 1 auto; /* Allow buttons to grow and shrink */
+            min-width: 150px; /* Set a minimum width for buttons */
+            padding: 1rem; /* Add padding */
+            font-size: 1rem; /* Font size */
         }
 
-        .action-button svg {
-            width: 1.125rem;
-            height: 1.125rem;
-            flex-shrink: 0;
-        }
-
-        .action-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        @media (max-width: 768px) {
+            .action-button {
+                font-size: 0.9rem; /* Adjust font size for mobile */
+            }
         }
 
         .version-container {
@@ -303,14 +324,10 @@
 
         /* Disclaimer Styles */
         .disclaimer {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(255, 0, 0, 0.1);
-            border: 1px solid rgba(255, 0, 0, 0.2);
-            border-radius: 15px;
-            text-align: center;
-            color: #ff4444;
-            line-height: 1.6;
+            border: 2px dashed rgba(255, 0, 0, 0.8); /* Red stitch-like border */
+            padding: 1rem;
+            margin-top: 20px;
+            background-color: rgba(255, 0, 0, 0.1); /* Light red background for contrast */
         }
 
         .disclaimer-title {
@@ -662,12 +679,20 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(4, auto); /* Keeps all sections in one row */
-            gap: 1.5rem; /* Adds more spacing between items */
-            align-items: center; /* Aligns items properly */
-            justify-content: start; /* Aligns to the left */
-            max-width: 100%; /* Ensures it stretches properly */
-            padding: 1rem 2rem; /* Adds spacing inside */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+            gap: 1rem; /* Space between items */
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr; /* Stack items on mobile */
+            }
+            .device-info-container {
+                text-align: center; /* Center text in mobile view */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .info-item {
@@ -677,6 +702,12 @@
             justify-content: center;
             gap: 0.25rem;
             min-width: 150px; /* Ensures uniform width for better spacing */
+        }
+
+        @media (max-width: 768px) {
+            .info-item {
+                text-align: center; /* Center text in mobile view */
+            }
         }
 
         .info-label {
@@ -689,6 +720,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .info-label,
+            .info-value {
+                text-align: center; /* Center text in mobile view */
+            }
         }
 
        /* Center the Download Button */
@@ -816,8 +854,8 @@
                 <img src="assets/img/risingOS_logo.png" alt="">
             </a>
             <button class="mobile-menu-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
             <div class="nav-links">
@@ -861,14 +899,6 @@
                     </div>
                 </div>
                 <div class="device-info-container">
-                    <div class ="info-item">
-                        <a id="download-link" class="action-button download-button file-download" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                            </svg>
-                            Download
-                        </a>
-                    </div>
                     <div class="info-grid">
                         <div class="info-item">
                             <div class="info-label">RisingOS Version</div>
@@ -886,19 +916,15 @@
                                 <div class="info-label">File Size</div>
                                 <div class="info-value" id="file-size">-</div>
                         </div>
-                        
+                    </div>
+                    <div class="download-button-container" style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                        <a id="download-link" class="action-button download-button" target="_blank" style="padding: 1rem 5rem; font-size: 1.2rem;">Download</a>
                     </div>
                 </div>
                 
 
                 <div class="action-buttons">
                     
-                    <a id="changelog-link" class="action-button" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                        </svg>
-                        Changelog
-                    </a>
                     <a id="guide-link" class="action-button" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -923,6 +949,13 @@
                         </svg>
                         Support
                     </a>
+                    <a id="device-changelog" class="action-button" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18v18H3V3z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 9h18M3 15h18" />
+                        </svg>
+                        Changelog
+                    </a>
                 </div>
             </div>
         </div>
@@ -932,7 +965,7 @@
     <footer class="py-8">
         <div class="container mx-auto px-4">
         
-            <hr class="footer-divider mb-8">
+            <!-- <hr class="footer-divider mb-8"> -->
 
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
                 <p>&copy; 2025 RisingOS-Revived. All rights reserved.</p>
@@ -1022,8 +1055,8 @@
             });
             document.getElementById('file-size').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
             document.getElementById('download-link').href = device.download;
-            document.getElementById('changelog-link').href = device.device_changelog;
             document.getElementById('guide-link').href = `https://github.com/rising-dpenra/official_devices/blob/fifteen/OTA/flashguide/${device.codename}.md`;
+            document.getElementById('device-changelog').href = `https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/${device.codename}.txt`;
             document.getElementById('previous-builds').href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${device.variant.toUpperCase()}/${device.codename}`;
             document.getElementById('recovery-link').href = device.recovery;
             document.getElementById('paypal-link').href = device.paypal;
