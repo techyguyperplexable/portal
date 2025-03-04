@@ -91,7 +91,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/mondrian.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-poco-f5-pro-2.png",
-    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/106485828?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/mondrian.txt",
     "build": "userdebug"
   },
