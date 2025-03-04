@@ -60,10 +60,10 @@
     .screenshot-grid img:last-child {
       margin-right: 0;
     }
-    /* .screenshot-grid img:hover {
+    .screenshot-grid img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Glowing effect */
-    } */
+    }
     .screenshot-header {
         text-align: center;
         margin: 20px 0;
@@ -106,17 +106,24 @@
         background-color: green;
     }
     .downloads-container {
-        background: linear-gradient(135deg, #000000, #434343);
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        margin: 20px 0;
-        animation: glow 1.5s infinite alternate;
+        width: 90%;  /* Make it smaller */
+        max-width: 400px;  /* Set a maximum width */
+        margin: 20px auto;  /* Center it */
+        padding: 1.5rem;  /* Add padding */
+        border-radius: 30px;  /* Increased rounded corners */
+        background-color: rgba(255, 255, 255, 0);  /* Transparent background */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+        transition: transform 0.3s;  /* Smooth hover effect */
+        animation: glow 1.5s infinite alternate;  /* Glowing effect */
     }
+
     @keyframes glow {
         0% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); }
         100% { box-shadow: 0 0 30px rgba(0, 255, 0, 1); }
+    }
+
+    .downloads-container:hover {
+        transform: scale(1.05);  /* Slightly enlarge on hover */
     }
     .downloads-value {
         font-size: 2.5em;
@@ -160,6 +167,7 @@
         transform: scale(1.05); /* Slightly enlarge on hover */
         box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Glowing effect */
     }
+
   </style>
 
 </head>

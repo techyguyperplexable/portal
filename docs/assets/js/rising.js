@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log("API Response:", data);  // Debugging
 
       const totalDownloadsElement = document.getElementById('totalDownloads');
-      totalDownloadsElement.innerHTML = `Total Downloads: <br><span style="font-weight: bold; color: green;">${data.total}</span>`;
+      totalDownloadsElement.innerHTML = `Total Downloads <br><span style="font-weight: bold; color: green;">${data.total}</span>`;
 
       // Extract downloads per day
       const lineChartData = {
