@@ -13,10 +13,10 @@
   <link href="assets/img/tab-logo.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,10 +32,10 @@
 
   <style>
     body {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
     h2, h3, p {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
         margin: 0;
     }
     .screenshot-header, .downloads-value {
@@ -109,7 +109,7 @@
         border-radius: 30px;  /* Increased rounded corners */
         background-color: rgba(255, 255, 255, 0);  /* Transparent background */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow */
-        transition: transform 0.3s;  /* Smooth hover effect */
+        transition: transform 0.3s ease-in-out;  /* Smooth hover effect */
         animation: glow 1.5s infinite alternate;  /* Glowing effect */
     }
 
@@ -184,6 +184,57 @@
     #close-modal:hover {
         color: lightcoral;
     }
+
+    .btn-success {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-success:hover {
+        background-color: #28a745;
+        transform: scale(1.05);
+    }
+    .collapse {
+        transition: all 0.3s ease-in-out;
+    }
+    .collapse:not(.show) {
+        display: none;
+    }
+    .collapsing {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .chart-container {
+        position: relative;
+        height: 300px;
+        width: 100%;
+    }
+    #graphCollapse {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    #graphCollapse.show {
+        display: block;
+        opacity: 1;
+    }
+
+    .header-divider {
+        height: 7px; /* Height of the divider */
+        background: linear-gradient(90deg, green, #073d00); /* Gradient color */
+        width: 5%; /* Adjusted width for better appearance */
+        margin: 20px auto; /* Center the divider */
+        border-radius: 5px; /* Rounded corners */
+        animation: expand 1s forwards; /* Animation */
+    }
+
+    @keyframes expand {
+        from {
+            width: 0%; /* Start from 0% width */
+        }
+        to {
+            width: 10%; /* End at 50% width */
+        }
+    }
   </style>
 
 </head>
@@ -241,7 +292,7 @@
         <p>We are <span class="typed" data-typed-items="Powerful, Customizable, Refined.">RisingOS Revived</span><span class="typed-cursor typed-cursor--blink"></span></p>
         <br>
         <a href="devices.html" class="btn btn-success btn-lg" style="font-size: 24px;border-radius:30px;">
-          Download Now!
+          Download Now
         </a>
       </div>
 
@@ -250,8 +301,9 @@
     <!-- Screenshot Grid Section -->
    <section id="screenshot-grid" class="screenshot-grid section">
      <div class="container text-center">
-       <h3 class="screenshot-header">Screenshots</h3>
-       <p>Explore the stunning visuals of <span class="highlight">RisingOS Revived</span> in action, showcasing its features and user interface.</p>
+       <h1 class="screenshot-header"><strong>Screenshots</strong></h1>
+       <div class="header-divider"></div>
+       <p><strong>Explore the stunning visuals of <span class="highlight">RisingOS Revived</span> in action,<br> showcasing its features and user interface.</strong></p>
        <div class="slider">
         <div class="slides">
             <div class="slide"><img src="assets/img/screenshots/screenshot2-portrait.png" alt="Screenshot 2"></div>
@@ -283,54 +335,89 @@
    <!-- Statistics Section -->
    <section id="statistics" class="statistics section text-center">
      <div class="container">
-       <h3>Statistics <span class="highlight">Metrics</span></h3><br>
-       <p>Track the downloads per day, per operating system, and by country.</p>
-       <div class="badge-container">
-        <!-- Begin SF Tag -->
-        <div class="sf-root" data-id="3846893" data-badge="oss-users-love-us-black" style="width:125px">
-          <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
-        </div>
-        <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3846893';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
-        </script>
-        <!-- End SF Tag -->
-           <!-- SourceForge Badge Integration -->
-        <div class="sf-root" data-id="3846893" data-badge="oss-rising-star-black" data-metadata="achievement=oss-rising-star" style="width:125px">
-          <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
-        </div>
-        <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3846893';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
-        <!-- End SourceForge Badge Integration -->
-         <!-- Begin SF Tag -->
-        <div class="sf-root" data-id="3846893" data-badge="oss-sf-favorite-black" data-metadata="achievement=oss-sf-favorite" style="width:125px">
-          <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
-        </div>
-        <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3846893';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
-        </script>
-        <!-- End SF Tag -->
-       </div>
+       <h1><strong>Statistics</strong></h1>
+       <div class="header-divider"></div>
+       <p><strong>Track the downloads per day, per operating system,<br> and by country.</strong></p><br>
+       <button class="btn btn-success" type="button" id="toggleGraphs">
+         <i class="bi bi-chevron-down"></i> <strong><span>Show Graphs</span></strong>
+       </button>
+       <div id="graphCollapse">
+         <div class="row mt-4">
+           <div class="col-md-4">
+             <div class="chart-container">
+               <canvas id="lineChart"></canvas>
+             </div>
+           </div>
+           <div class="col-md-4">
+             <div class="chart-container">
+               <canvas id="pieChart"></canvas>
+             </div>
+           </div>
+           <div class="col-md-4">
+             <div class="chart-container">
+               <canvas id="barChart"></canvas>
+             </div>
+           </div>
+         </div>
+       </div><br><br>
        <div class="downloads-container">
          <!--<h3>Total Downloads</h3>-->
          <p id="totalDownloads" class="downloads-value">Loading...</p>
-       </div>
-       <div class="row">
-         <div class="col-md-4">
-           <canvas id="lineChart"></canvas>
-         </div>
-         <div class="col-md-4">
-           <canvas id="pieChart"></canvas>
-         </div>
-         <div class="col-md-4">
-           <canvas id="barChart"></canvas>
-         </div>
-       </div>
+       </div><br>
+       <div class="badge-container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+        <!-- Begin SF Tag -->
+        <div class="sf-root" data-id="3846893" data-badge="oss-users-love-us-black" style="width:125px; margin: 0 10px;">
+            <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
+        </div>
+        <script>
+            (function () {
+                var sc = document.createElement('script');
+                sc.async = true;
+                sc.src = 'https://b.sf-syn.com/badge_js?sf_id=3846893';
+                var p = document.getElementsByTagName('script')[0];
+                p.parentNode.insertBefore(sc, p);
+            })();
+        </script>
+        <!-- End SF Tag -->
+        
+        <!-- Begin SF Tag -->
+        <div class="sf-root" data-id="3846893" data-badge="oss-rising-star-black" data-metadata="achievement=oss-rising-star" style="width:125px; margin: 0 10px;">
+            <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
+        </div>
+        <script>
+            (function () {
+                var sc = document.createElement('script');
+                sc.async = true;
+                sc.src = 'https://b.sf-syn.com/badge_js?sf_id=3846893';
+                var p = document.getElementsByTagName('script')[0];
+                p.parentNode.insertBefore(sc, p);
+            })();
+        </script>
+        <!-- End SF Tag -->
+        
+        <!-- Begin SF Tag -->
+        <div class="sf-root" data-id="3846893" data-badge="oss-sf-favorite-black" data-metadata="achievement=oss-sf-favorite" style="width:125px; margin: 0 10px;">
+            <a href="https://sourceforge.net/projects/risingos-revived/" target="_blank">RisingOS-Revived</a>
+        </div>
+        <script>
+            (function () {
+                var sc = document.createElement('script');
+                sc.async = true;
+                sc.src = 'https://b.sf-syn.com/badge_js?sf_id=3846893';
+                var p = document.getElementsByTagName('script')[0];
+                p.parentNode.insertBefore(sc, p);
+            })();
+        </script>
+        <!-- End SF Tag -->
+    </div>
      </div>
    </section>
 
-  </main>
-
   <section id="team" class="team section">
     <div class="container my-5">
-    <h3 class="text-center mb-4">Core Team Members</h3>
-    <p class="text-center mb-4">Meet the dedicated individuals behind our project, working tirelessly to bring you the best experience possible.</p>
+    <h1 class="text-center mb-4"><strong>Core Team Members</strong></h1>
+    <div class="header-divider"></div>
+    <p class="text-center mb-4"><strong>Meet the dedicated individuals behind our project, working tirelessly <br>to bring you the best experience possible.</strong></p>
     <div class="row row-cols-1 row-cols-md-5 justify-content-center gap-3" id="team-container"></div>
   </div>
 </section>
@@ -375,6 +462,7 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -385,57 +473,72 @@
   <script src="assets/js/rising.js"></script>
 
   <script>
+    // Ensure the fetchData function is called when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchData();
+    });
+
     let currentIndex = 0;
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
 
-    function showSlide(index) {
-        currentIndex = index;
-        const offset = -currentIndex * 100;
-        document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === currentIndex);
-        });
+    // Store chart instances
+    let charts = {
+        line: null,
+        pie: null,
+        bar: null
+    };
+
+    function resetCanvas(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const parent = canvas.parentElement;
+        const newCanvas = document.createElement('canvas');
+        newCanvas.id = canvasId;
+        parent.removeChild(canvas);
+        parent.appendChild(newCanvas);
+        return newCanvas;
     }
 
-    function currentSlide(index) {
-        showSlide(index);
+    // Manual toggle functionality
+    const graphCollapse = document.getElementById('graphCollapse');
+    const toggleButton = document.getElementById('toggleGraphs');
+    const toggleIcon = toggleButton.querySelector('i');
+    const toggleText = toggleButton.querySelector('span');
+
+    function showGraphs() {
+        graphCollapse.classList.add('show');
+        toggleIcon.classList.remove('bi-chevron-down');
+        toggleIcon.classList.add('bi-chevron-up');
+        toggleText.textContent = 'Hide Graphs';
+        setTimeout(initializeCharts, 50);
     }
 
-    // Auto slide every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    }, 5000);
-
-    // Swipe functionality for mobile
-    let startX;
-    let endX;
-
-    slides.forEach(slide => {
-        slide.addEventListener('touchstart', e => {
-            startX = e.touches[0].clientX;
-        });
-
-        slide.addEventListener('touchmove', e => {
-            endX = e.touches[0].clientX;
-        });
-
-        slide.addEventListener('touchend', () => {
-            if (startX > endX + 50) {
-                // Swipe left
-                currentIndex = (currentIndex + 1) % slides.length;
-                showSlide(currentIndex);
-            } else if (startX < endX - 50) {
-                // Swipe right
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                showSlide(currentIndex);
+    function hideGraphs() {
+        graphCollapse.classList.remove('show');
+        toggleIcon.classList.remove('bi-chevron-up');
+        toggleIcon.classList.add('bi-chevron-down');
+        toggleText.textContent = 'Show Graphs';
+        // Destroy charts when hiding
+        Object.values(charts).forEach(chart => {
+            if (chart) {
+                chart.destroy();
             }
         });
-    });
-  </script>
+        charts = {
+            line: null,
+            pie: null,
+            bar: null
+        };
+    }
 
-  <script>
+    toggleButton.addEventListener('click', function() {
+        if (graphCollapse.classList.contains('show')) {
+            hideGraphs();
+        } else {
+            showGraphs();
+        }
+    });
+
     function cleanChangelogContent(data) {
         // Remove unnecessary strings and format text
         let cleanedData = data.replace(/##/g, '')
