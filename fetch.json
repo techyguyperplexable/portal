@@ -115,7 +115,7 @@
     "status": "active",
     "oem": "Xiaomi",
     "device": "Redmi Note 12 4G",
-    "codename": "topaz/tapas",
+    "codename": "topaz",
     "maintainer": "Haruki x skwel",
     "urls": [
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/topaz.json",
