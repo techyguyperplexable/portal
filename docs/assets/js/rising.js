@@ -95,3 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Run the function
   fetchData();
+
+  document.addEventListener("DOMContentLoaded", function() {
+    AOS.init();
+  });

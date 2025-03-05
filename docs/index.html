@@ -69,6 +69,30 @@
         transition: transform 0.3s ease;
     }
 
+    .accordion {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .accordion-item {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .accordion-button {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #faqAccordion {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
     .slider {
         position: relative;
         max-width: 600px;
@@ -237,6 +261,65 @@
     }
   </style>
 
+
+<style>
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+.slide {
+    min-width: 100%;
+}
+</style>
+
+
+<style>
+#graphCollapse.show .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.chart-container {
+    width: 100%;
+    max-width: 400px; /* Adjust the max width for better alignment */
+}
+</style>
+
+
+<style>
+#graphCollapse {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#graphCollapse.show {
+    display: flex;
+    opacity: 1;
+}
+.chart-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+</style>
+
+
+<style>
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Ensures it doesn't overflow */
+    margin: 0 auto; /* Centers it */
+}
+</style>
+
 </head>
 
 <body class="index-page">
@@ -257,6 +340,7 @@
           <li><a href="https://github.com/RisingOS-Revived/official_devices/issues/new?template=form.md">Maintainership</a></li>
           <li><a href="#statistics">Statistics</a></li>
           <li><a href="#screenshot-grid">Screenshots</a></li>
+          <li><a href="#faq">FAQs</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -335,7 +419,7 @@
    <!-- Statistics Section -->
    <section id="statistics" class="statistics section text-center">
      <div class="container">
-       <h1><strong>Statistics</strong></h1>
+      <h1 class="screenshot-header"><strong>Statistics</strong></h1>
        <div class="header-divider"></div>
        <p><strong>Track the downloads per day, per operating system, and by country.</strong></p><br>
        <button class="btn btn-success" type="button" id="toggleGraphs">
@@ -410,17 +494,42 @@
         </script>
         <!-- End SF Tag -->
     </div>
-     </div>
-   </section>
+  </section>
+
+  <section id="faq" class="faq section" style="background-color: #000; color: #0f0; padding: 80px 0;">
+    <div class="container" data-aos="fade-up" style="max-width: 900px; margin: auto; text-align: center;">
+      <h1 class="screenshot-header"><strong>Frequently Asked Questions</strong></h1>
+      <div class="header-divider"></div>
+      <div class="faq-container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+        
+        <div class="faq-item" data-aos="flip-left" style="background-color: #111; padding: 25px; border-radius: 15px; width: 100%; max-width: 350px; border: 1px solid #0f0; text-align: center; box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);">
+          <h3 style="color: #8f8; font-size: 1.2rem;">What is RisingOS Revived?</h3>
+          <p style="color: #fff; font-size: 1rem;">RisingOS Revived is a custom ROM that offers a powerful, customizable, and refined Android experience.</p>
+        </div>
+        
+        <div class="faq-item" data-aos="flip-right" style="background-color: #111; padding: 25px; border-radius: 15px; width: 100%; max-width: 350px; border: 1px solid #0f0; text-align: center; box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);">
+          <h3 style="color: #8f8; font-size: 1.2rem;">How can I install RisingOS Revived?</h3>
+          <p style="color: #fff; font-size: 1rem;">You can install RisingOS by downloading the ROM from our website and following the official installation guide.</p>
+        </div>
+        
+        <div class="faq-item" data-aos="flip-up" style="background-color: #111; padding: 25px; border-radius: 15px; width: 100%; max-width: 350px; border: 1px solid #0f0; text-align: center; box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);">
+          <h3 style="color: #8f8; font-size: 1.2rem;">Is RisingOS Revived safe to use?</h3>
+          <p style="color: #fff; font-size: 1rem;">Yes, RisingOS Revived is built with security and stability in mind, ensuring a smooth experience for users.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
 
   <section id="team" class="team section">
     <div class="container my-5">
-    <h1 class="text-center mb-4"><strong>Core Team Members</strong></h1>
-    <div class="header-divider"></div>
-    <p class="text-center mb-4"><strong>Meet the dedicated individuals behind our project, working tirelessly to bring you the best experience possible.</strong></p>
-    <div class="row row-cols-1 row-cols-md-5 justify-content-center gap-3" id="team-container"></div>
-  </div>
-</section>
+      <h1 class="screenshot-header"><strong>Core Members</strong></h1>
+      <div class="header-divider"></div>
+      <p class="text-center mb-4"><strong>Meet the dedicated individuals behind our project, working tirelessly to bring you the best experience possible.</strong></p>
+      <div class="row row-cols-1 row-cols-md-5 justify-content-center gap-3" id="team-container"></div>
+    </div>
+  </section>
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
@@ -568,6 +677,192 @@
             document.getElementById('whats-new-modal').style.display = 'none';
         }
     };
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const indicators = document.querySelectorAll(".indicator");
+    const totalSlides = slides.length;
+    const slideContainer = document.querySelector(".slides");
+
+    function updateSlidePosition() {
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
+    }
+
+    function setSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => setSlide(index));
+    });
+
+    // Auto slide every 3 seconds
+    setInterval(nextSlide, 3000);
+
+    // Initial slide position
+    updateSlidePosition();
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const indicators = document.querySelectorAll(".indicator");
+    const totalSlides = slides.length;
+    const slideContainer = document.querySelector(".slides");
+
+    function updateSlidePosition() {
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+    }
+
+    function setSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => setSlide(index));
+    });
+
+    // Auto slide every 3 seconds
+    let autoSlide = setInterval(nextSlide, 3000);
+
+    // Touch swipe handling
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slideContainer.addEventListener("touchstart", function (e) {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    slideContainer.addEventListener("touchend", function (e) {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchStartX - touchEndX > 50) {
+            nextSlide(); // Swipe left
+        } else if (touchEndX - touchStartX > 50) {
+            prevSlide(); // Swipe right
+        }
+    }
+
+    // Initial slide position
+    updateSlidePosition();
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const indicators = document.querySelectorAll(".indicator");
+    const totalSlides = slides.length;
+    const slideContainer = document.querySelector(".slides");
+
+    function updateSlidePosition() {
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+    }
+
+    function setSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => setSlide(index));
+    });
+
+    // Auto slide every 3 seconds
+    setInterval(nextSlide, 3000);
+
+    // Swipe functionality
+    let startX = 0;
+    slideContainer.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX;
+    });
+
+    slideContainer.addEventListener("touchend", function (e) {
+        let endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) {
+            nextSlide(); // Swipe left
+        } else if (endX - startX > 50) {
+            prevSlide(); // Swipe right
+        }
+    });
+
+    // Initial slide position
+    updateSlidePosition();
+});
+
+// Fix alignment of graphs when toggled
+document.getElementById('toggleGraphs').addEventListener('click', function() {
+    const graphCollapse = document.getElementById('graphCollapse');
+    setTimeout(() => {
+        graphCollapse.style.display = graphCollapse.classList.contains('show') ? 'flex' : 'none';
+    }, 300); 
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const charts = document.querySelectorAll("canvas");
+
+    charts.forEach(chart => {
+        chart.style.opacity = "0";
+        chart.style.transform = "scale(0.8)";
+        chart.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+        
+        setTimeout(() => {
+            chart.style.opacity = "1";
+            chart.style.transform = "scale(1)";
+        }, 300);
+    });
+});
 </script>
 
 </body>
