@@ -84,20 +84,13 @@
             margin: 0 auto;  
             padding: 1rem;  
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+            animation: fadeIn 0.6s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card {
-            width: 100%;  /* Ensure card takes full width */
-            max-width: 600px;  /* Set a max width for larger screens */
-            margin: 0 auto;  /* Center the card */
-            padding: 1rem;  /* Add some padding */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Optional shadow for better visibility */
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                padding: 0.5rem;  /* Reduce padding on mobile */
-            }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 255, 0, 0.15);
         }
 
         .device-info-container {
@@ -207,6 +200,9 @@
             min-width: 150px; /* Set a minimum width for buttons */
             padding: 1rem; /* Add padding */
             font-size: 1rem; /* Font size */
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         @media (max-width: 768px) {
@@ -558,6 +554,9 @@
             align-items: flex-start;
             justify-content: space-between;
             margin-bottom: 1rem;
+            animation: slideIn 0.8s ease-out;
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: 0 8px 32px rgba(0, 255, 0, 0.1);
         }
 
         .codename-display h1, .codename-display span {
@@ -567,6 +566,245 @@
             font-weight: bold;
         }
 
+        .device-info-left {
+            flex: 1;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .device-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .device-brand {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .device-name {
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .codename-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.25rem;
+        }
+
+        .codename-text {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .maintainer-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .maintainer-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .maintainer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.25rem;
+        }
+
+        .maintainer-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, #00ff00, #00cc00) padding-box,
+                        linear-gradient(45deg, #ff00ff, #00ffff) border-box;
+            padding: 3px;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .maintainer-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .maintainer-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .maintainer-name {
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+            background: rgba(0, 255, 0, 0.15);
+        }
+
+        .social-link:hover .social-icon {
+            color: #00ff00;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @media (max-width: 768px) {
+            .maintainer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .maintainer-info {
+                align-items: center;
+            }
+
+            .maintainer-avatar {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        /* Add padding to body to account for fixed navbar */
+        body {
+            padding-top: 64px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: auto;
+            background: #111;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #00ff00;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover .social-icon {
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            color: #00ff00;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Device Info Styles */
+        .device-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .codename-display {
+            position: relative;
+            padding: 1.5rem;
+            background: #141414;
+            border-radius: 8px;
+            text-align: left;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            animation: slideIn 0.8s ease-out;
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: 0 8px 32px rgba(0, 255, 0, 0.1);
+        }
+
+        .codename-display h1, .codename-display span {
+            background: linear-gradient(45deg, #00ffcc, #00ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
 
         .device-info-left {
             flex: 1;
@@ -620,10 +858,8 @@
         .maintainer-section {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers content horizontally */
-            justify-content: center;
-            text-align: center; /* Ensures text stays centered */
-            margin-top: 0.5rem; /* Adds some spacing */
+            align-items: center;
+            gap: 0.5rem;
         }
 
         /* Circular Image with Modern Effects */
@@ -639,12 +875,12 @@
             box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-right:1.8rem;
+            animation: pulse 2s infinite ease-in-out;
         }
 
         /* Hover Effect */
         .maintainer-avatar:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.5);
+            transform: scale(1.1) rotate(5deg);
         }
 
         .maintainer-avatar img {
@@ -667,7 +903,7 @@
             font-size: 0.9rem;
             color: #fff;
             font-weight: 500;
-            margin-right: 2.7rem;
+            margin-right: 0;
         }
 
         .device-info-container {
@@ -750,12 +986,31 @@
             align-items: center;
             gap: 8px;
             transition: box-shadow 0.3s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
         }
 
             .download-button:hover {
                 box-shadow: 0 6px 20px rgba(0, 255, 0, 0.25);
                 transform: scale(1.05);
             }
+
+        .download-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
 
         .action-buttons {
             display: flex;
@@ -843,6 +1098,131 @@
         h2.screenshot-header:hover::after, h2:hover::after, h2.text-center:hover::after {
             background-color: green;
         }
+
+        /* Add these new animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Smooth loading states */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Modern scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00cc00;
+        }
+
+        /* Add these new styles */
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px; /* Slightly smaller icons */
+            height: 32px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #00ff00, #00cc00);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+        }
+
+        .social-link:hover::before {
+            opacity: 0.15;
+        }
+
+        .social-icon {
+            width: 20px; /* Slightly smaller icons */
+            height: 20px;
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover .social-icon {
+            color: #00ff00;
+            transform: scale(1.1) rotate(5deg);
+        }
     </style>
 </head>
 <body>
@@ -891,11 +1271,27 @@
                         <h1 class="codename-text" id="device-codename">Loading...</h1>
                     </div>
                     <div class="maintainer-section">
-                        <div class="maintainer-avatar">
-                            <img id="maintainer-image" alt="Maintainer">
+                        <div class="maintainer-content">
+                            <div class="maintainer-avatar">
+                                <img id="maintainer-image" alt="Maintainer">
+                            </div>
+                            <div class="maintainer-info">
+                                <div class="maintainer-label">Maintained by</div>
+                                <div class="maintainer-name" id="maintainer">Loading...</div>
+                                <div class="social-links">
+                                    <a href="#" id="telegram-link" class="social-link" target="_blank">
+                                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.38-.49 1.05-.75 4.12-1.79 6.87-2.97 8.26-3.54 3.93-1.62 4.75-1.9 5.27-1.91.12 0 .37.03.54.18.14.12.18.28.2.46-.02.06-.02.11-.02.17z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" id="github-link" class="social-link" target="_blank">
+                                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="maintainer-label">Maintained by</div>
-                        <div class="maintainer-name" id="maintainer">Loading...</div>
                     </div>
                 </div>
                 <div class="device-info-container">
@@ -981,6 +1377,7 @@
     <script>
         async function loadDeviceData() {
             try {
+                document.getElementById('card').classList.add('loading');
                 const urlParams = new URLSearchParams(window.location.search);
                 const codename = urlParams.get('codename');
 
@@ -1007,6 +1404,8 @@
             } catch (error) {
                 console.error('Error loading device data:', error);
                 showError('Failed to load device data. Please try again later.');
+            } finally {
+                document.getElementById('card').classList.remove('loading');
             }
         }
 
@@ -1043,25 +1442,50 @@
         }
 
         function updateDeviceInfo(device) {
-            document.getElementById('device-codename').textContent = device.codename;
-            document.getElementById('device-brand').textContent = device.oem;
-            document.getElementById('device-name').textContent = device.device;
-            document.getElementById('android-version').textContent = device.version;
-            document.getElementById('build-type').textContent = "userdebug";
-            document.getElementById('build-date').textContent = new Date(device.timestamp * 1000).toLocaleDateString("en-US", {
-                month: "short",  // "Feb"
-                day: "numeric",  // "14"
-                year: "numeric"  // "2025"
+            const elements = document.querySelectorAll('.info-value, .codename-text, .device-brand');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
             });
-            document.getElementById('file-size').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
-            document.getElementById('download-link').href = device.download;
-            document.getElementById('guide-link').href = `https://github.com/RisingOS-Revived/official_devices/tree/fifteen/OTA/guide/${device.codename}.md`;
-            document.getElementById('device-changelog').href = `https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/${device.codename}.txt`;
-            document.getElementById('previous-builds').href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${device.variant.toUpperCase()}/${device.codename}`;
-            document.getElementById('recovery-link').href = device.recovery;
-            document.getElementById('paypal-link').href = device.paypal;
-            document.getElementById('maintainer').textContent = device.maintainer;
-            document.getElementById('maintainer-image').src = device.maintainer_avatar;
+
+            setTimeout(() => {
+                document.getElementById('device-codename').textContent = device.codename;
+                document.getElementById('device-brand').textContent = device.oem;
+                document.getElementById('device-name').textContent = device.device;
+                document.getElementById('android-version').textContent = device.version;
+                document.getElementById('build-type').textContent = "userdebug";
+                document.getElementById('build-date').textContent = new Date(device.timestamp * 1000).toLocaleDateString("en-US", {
+                    month: "short",  // "Feb"
+                    day: "numeric",  // "14"
+                    year: "numeric"  // "2025"
+                });
+                document.getElementById('file-size').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
+                document.getElementById('download-link').href = device.download;
+                document.getElementById('guide-link').href = `https://github.com/RisingOS-Revived/official_devices/tree/fifteen/OTA/guide/${device.codename}.md`;
+                document.getElementById('device-changelog').href = `https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/${device.codename}.txt`;
+                document.getElementById('previous-builds').href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${device.variant.toUpperCase()}/${device.codename}`;
+                document.getElementById('recovery-link').href = device.recovery;
+                document.getElementById('paypal-link').href = device.paypal;
+                document.getElementById('maintainer').textContent = device.maintainer;
+                document.getElementById('maintainer-image').src = device.maintainer_avatar;
+
+                // Animate elements back in
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.transition = 'all 0.3s ease';
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+
+                // Update social links
+                const telegramLink = document.getElementById('telegram-link');
+                const githubLink = document.getElementById('github-link');
+                
+                // Set the links
+                telegramLink.href = `https://t.me/RisingOS${device.codename}`; // Adjust the URL pattern as needed
+                githubLink.href = `https://github.com/RisingOS-Revived/official_devices/tree/fifteen/OTA/${device.codename}`; // Adjust the URL pattern as needed
+            }, 300);
         }
 
         // Initialize
@@ -1080,6 +1504,34 @@
             if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
                 mobileMenu.classList.remove('active');
             }
+        });
+
+        // Add smooth navigation transitions
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location = link.href;
+                }, 300);
+            });
+        });
+
+        // Intersection Observer for smooth scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .device-info-container, .action-buttons').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
