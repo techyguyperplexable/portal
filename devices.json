@@ -18,7 +18,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://t.me/veuxplayground/2950",
-        "timestamp": 1739541170
+        "timestamp": 1739541170,
+        "telegram": "https://t.me/amrito_kun"
     },
     {
         "status": "active",
@@ -39,7 +40,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://t.me/veuxplayground/2950",
-        "timestamp": 1739558899
+        "timestamp": 1739558899,
+        "telegram": "https://t.me/amrito_kun"
     },
     {
         "status": "active",
@@ -60,7 +62,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://t.me/veuxplayground/2950",
-        "timestamp": 1739555928
+        "timestamp": 1739555928,
+        "telegram": "https://t.me/amrito_kun"
     },
     {
         "status": "active",
@@ -81,7 +84,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/CORE/sunny/RisingOS_Revived-6.2.1-STABLE/boot.img/download",
-        "timestamp": 1739514782
+        "timestamp": 1739514782,
+        "telegram": "https://t.me/dpenra"
     },
     {
         "status": "active",
@@ -102,7 +106,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/sunny/RisingOS_Revived-6.2.1-STABLE/boot.img/download",
-        "timestamp": 1739481343
+        "timestamp": 1739481343,
+        "telegram": "https://t.me/dpenra"
     },
     {
         "status": "active",
@@ -123,7 +128,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download",
-        "timestamp": 1739361872
+        "timestamp": 1739361872,
+        "telegram": "@tribual"
     },
     {
         "status": "active",
@@ -144,7 +150,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download",
-        "timestamp": 1739369581
+        "timestamp": 1739369581,
+        "telegram": "@tribual"
     },
     {
         "status": "active",
@@ -165,7 +172,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739385315
+        "timestamp": 1739385315,
+        "telegram": "https://t.me/samrth012"
     },
     {
         "status": "active",
@@ -186,7 +194,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739370257
+        "timestamp": 1739370257,
+        "telegram": "https://t.me/samrth012"
     },
     {
         "status": "active",
@@ -207,7 +216,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739321681
+        "timestamp": 1739321681,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -228,7 +238,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739315869
+        "timestamp": 1739315869,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -249,7 +260,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://t.me/keoshlapgroup/14198",
-        "timestamp": 1739733841
+        "timestamp": 1739733841,
+        "telegram": "https://t.me/keoshlapgroup"
     },
     {
         "status": "active",
@@ -270,7 +282,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://t.me/keoshlapgroup/14198",
-        "timestamp": 1739709518
+        "timestamp": 1739709518,
+        "telegram": "https://t.me/keoshlapgroup"
     },
     {
         "status": "active",
@@ -291,7 +304,8 @@
         "buildtype": "OFFICIAL",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1740041516
+        "timestamp": 1740041516,
+        "telegram": "https://t.me/POCOX3_Build_SG"
     },
     {
         "status": "active",
@@ -312,7 +326,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1740047773
+        "timestamp": 1740047773,
+        "telegram": "https://t.me/POCOX3_Build_SG"
     },
     {
         "status": "active",
@@ -333,7 +348,8 @@
         "buildtype": "OFFICIAL",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1740037179
+        "timestamp": 1740037179,
+        "telegram": "https://t.me/POCOX3_Build_SG"
     },
     {
         "status": "active",
@@ -354,7 +370,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739431288
+        "timestamp": 1739431288,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -375,7 +392,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1740108838
+        "timestamp": 1740108838,
+        "telegram": "https://t.me/ararchive_shan_rakh_discussion"
     },
     {
         "status": "active",
@@ -396,7 +414,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739946135
+        "timestamp": 1739946135,
+        "telegram": "https://t.me/thereachebuildchat"
     },
     {
         "status": "active",
@@ -417,7 +436,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739949557
+        "timestamp": 1739949557,
+        "telegram": "https://t.me/thereachebuildchat"
     },
     {
         "status": "active",
@@ -438,7 +458,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739942873
+        "timestamp": 1739942873,
+        "telegram": "https://t.me/thereachebuildchat"
     },
     {
         "status": "active",
@@ -459,7 +480,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739453955
+        "timestamp": 1739453955,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -480,7 +502,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739650374
+        "timestamp": 1739650374,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -501,7 +524,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1738937371
+        "timestamp": 1738937371,
+        "telegram": "https://t.me/edge30ultraroms"
     },
     {
         "status": "active",
@@ -522,7 +546,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/munch/twrp-3.7.1_12-v9.0_A15-munch-skkk.img/download",
-        "timestamp": 1740142058
+        "timestamp": 1740142058,
+        "telegram": "https://t.me/rik_x290"
     },
     {
         "status": "active",
@@ -543,7 +568,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/munch/twrp-3.7.1_12-v9.0_A15-munch-skkk.img/download",
-        "timestamp": 1740152697
+        "timestamp": 1740152697,
+        "telegram": "https://t.me/rik_x290"
     },
     {
         "status": "active",
@@ -564,7 +590,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739385754
+        "timestamp": 1739385754,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -585,7 +612,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739381748
+        "timestamp": 1739381748,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -606,7 +634,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739649232
+        "timestamp": 1739649232,
+        "telegram": ""
     },
     {
         "status": "active",
@@ -627,7 +656,8 @@
         "buildtype": "",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739644963
+        "timestamp": 1739644963,
+        "telegram": ""
     },
     {
         "status": "inactive",
@@ -648,7 +678,8 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1738845843
+        "timestamp": 1738845843,
+        "telegram": "https://t.me/Machad3xROMS"
     },
     {
         "status": "active",
@@ -669,7 +700,8 @@
         "buildtype": "Stable",
         "build": "userdebug",
         "recovery": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/a73xq/recovery/20250221-recovery.img",
-        "timestamp": 1740163143
+        "timestamp": 1740163143,
+        "telegram": "https://t.me/alqnisot"
     },
     {
         "status": "active",
@@ -690,6 +722,7 @@
         "buildtype": "STABLE",
         "build": "userdebug",
         "recovery": "",
-        "timestamp": 1739259654
+        "timestamp": 1739259654,
+        "telegram": "https://t.me/SharmagRit"
     }
 ]
