@@ -116,11 +116,11 @@
     "oem": "Xiaomi",
     "device": "Redmi Note 12 4G",
     "codename": "topaz",
-    "maintainer": "Haruki x skwel",
+    "maintainer": "Haruki x skwelx",
     "urls": [
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/topazz.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/topaz.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/topaz.json",
-      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/topazzz.json"
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/topaz.json"
     ],
     "device_avatar": "assets/img/devices/redmi-note-12-4g-1.png",
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
