@@ -112,7 +112,7 @@
     "build": "userdebug"
   },
   "topaz": {
-    "status": "active",
+    "status": "inactive",
     "oem": "Xiaomi",
     "device": "Redmi Note 12 4G",
     "codename": "topaz",
