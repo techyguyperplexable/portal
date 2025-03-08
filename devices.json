@@ -352,7 +352,7 @@
         "telegram": "https://t.me/POCOX3_Build_SG"
     },
     {
-        "status": "active",
+        "status": "inactive",
         "oem": "Xiaomi",
         "device": "Redmi Note 12 4G",
         "codename": "topaz",
