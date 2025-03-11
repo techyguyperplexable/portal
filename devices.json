@@ -724,5 +724,27 @@
         "recovery": "",
         "timestamp": 1739259654,
         "telegram": "https://t.me/SharmagRit"
+    },
+    {
+        "status": "active",
+        "oem": "Google",
+        "device": "Pixel 8 Pro",
+        "codename": "husky",
+        "maintainer": "EliteDarkKaiser",
+        "variant": "GAPPS",
+        "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/GAPPS/husky/RisingOS_Revived-6.2.1-25021514-GAPPS-OFFICIAL-husky-ota.zip/download",
+        "paypal": "",
+        "device_avatar": "assets/img/devices/google-pixel-8-pro-1.png",
+        "maintainer_avatar": "https://avatars.githubusercontent.com/u/87909274?v=4",
+        "filesize": 2521237302,
+        "md5": "115eb19903bf9e8640aa3a88bf9d61a0",
+        "sha256": "546b4f49cd4d3a7f3fdaf3c9bd082cc5604228a21bb87d71b202c5d225f00c38",
+        "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/husky.txt",
+        "version": "6.2.1-Boundless",
+        "buildtype": "",
+        "build": "userdebug",
+        "recovery": "",
+        "timestamp": 1739646501,
+        "telegram": ""
     }
 ]
