@@ -334,5 +334,21 @@
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/87909274?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/marble.txt",
     "build": "userdebug"
+  },
+  "husky": {
+    "status": "active",
+    "maintainer": "EliteDarkKaiser",
+    "oem": "Google",
+    "device": "Pixel 8 Pro",
+    "codename": "husky",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/husky.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/husky.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/husky.json"
+    ],
+    "device_avatar": "assets/img/devices/google-pixel-8-pro-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/87909274?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/husky.txt",
+    "build": "userdebug"
   }
 }
