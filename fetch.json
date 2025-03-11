@@ -350,5 +350,21 @@
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/87909274?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/husky.txt",
     "build": "userdebug"
+  },
+  "vermeer": {
+    "status": "active",
+    "maintainer": "ByteWave1014",
+    "oem": "Xiaomi",
+    "device": "POCO F6 Pro / Redmi K70",
+    "codename": "vermeer",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/vermeer.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/vermeer.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/vermeer.json"
+    ],
+    "device_avatar": "assets/img/devices/xiaomi-poco-f6-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/84397201?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/vermeer.txt",
+    "build": "userdebug"
   }
 }
