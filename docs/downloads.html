@@ -1232,6 +1232,23 @@
         body {
             overflow-x: hidden;  /* Prevent horizontal scrollbar */
         }
+
+        /* Mobile Optimization Styles */
+        @media (max-width: 768px) {
+            .card {
+                padding: 1rem; /* Reduce padding for mobile */
+                box-shadow: none; /* Remove shadow for better performance */
+            }
+            .device-info-container {
+                flex-direction: column; /* Stack items vertically */
+            }
+            .nav-links {
+                flex-direction: column; /* Stack navigation links */
+            }
+            .download-button {
+                font-size: 0.9rem; /* Adjust button size for mobile */
+            }
+        }
     </style>
 </head>
 <body>
