@@ -756,7 +756,7 @@
         "variant": "VANILLA",
         "download": "https://sourceforge.net/projects/risingos-revived/files/6.x/VANILLA/cheeseburger/RisingOS_Revived-6.3-250316-0013-VANILLA-OFFICIAL-cheeseburger-ota-signed.zip/download",
         "paypal": "https://www.paypal.com/donate/?hosted_button_id=9C79NMF2T3366",
-        "device_avatar": "assets/img/devices/oneplus-5-1.pngg",
+        "device_avatar": "assets/img/devices/oneplus-5-1.png",
         "maintainer_avatar": "https://avatars.githubusercontent.com/u/79085035?v=4",
         "filesize": 1270609132,
         "md5": "9c5d1dfbb5d543a2d7de5282c14a9427",
