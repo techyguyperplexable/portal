@@ -378,7 +378,7 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/cheeseburger.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/cheeseburger.json"
     ],
-    "device_avatar": "assets/img/devices/oneplus-5-1.pngg",
+    "device_avatar": "assets/img/devices/oneplus-5-1.png",
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/79085035?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/cheeseburger.txt",
     "build": "userdebug"
