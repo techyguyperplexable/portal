@@ -362,9 +362,41 @@
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/vermeer.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/vermeer.json"
     ],
-    "device_avatar": "assets/img/devices/xiaomi-poco-f6-1.png",
+    "device_avatar": "assets/img/devices/xiaomi-poco-f6-pro-1.png",
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/84397201?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/vermeer.txt",
+    "build": "userdebug"
+  },
+  "cheeseburger": {
+    "status": "active",
+    "maintainer": "SirRGB",
+    "oem": "OnePlus",
+    "device": "5",
+    "codename": "cheeseburger",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/cheeseburger.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/cheeseburger.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/cheeseburger.json"
+    ],
+    "device_avatar": "assets/img/devices/oneplus-5-1.pngg",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/79085035?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/cheeseburger.txt",
+    "build": "userdebug"
+  },
+  "dumpling": {
+    "status": "active",
+    "maintainer": "SirRGB",
+    "oem": "OnePlus",
+    "device": "5T",
+    "codename": "dumpling",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/dumpling.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/dumpling.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/dumpling.json"
+    ],
+    "device_avatar": "assets/img/devices/oneplus-5t-1.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/79085035?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dumpling.txt",
     "build": "userdebug"
   }
 }
