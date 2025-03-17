@@ -398,5 +398,37 @@
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/79085035?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dumpling.txt",
     "build": "userdebug"
+  },
+  "cheetah": {
+    "status": "active",
+    "maintainer": "Pyrtle93",
+    "oem": "Google",
+    "device": "Pixel 7 Pro",
+    "codename": "cheetah",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/cheetah.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/cheetah.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/cheetah.json"
+    ],
+    "device_avatar": "assets/img/devices/cheetah.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/5258054?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/cheetah.txt",
+    "build": "userdebug"
+  },
+  "panther": {
+    "status": "active",
+    "maintainer": "Pyrtle93",
+    "oem": "Google",
+    "device": "Pixel 7",
+    "codename": "panther",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/panther.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/panther.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/panther.json"
+    ],
+    "device_avatar": "assets/img/devices/panther.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/5258054?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/panther.txt",
+    "build": "userdebug"
   }
 }
