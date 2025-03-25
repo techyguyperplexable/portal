@@ -304,7 +304,7 @@
     "build": "userdebug"
   },
   "a73xq": {
-    "status": "active",
+    "status": "inactive",
     "maintainer": "alqix",
     "oem": "Samsung",
     "device": "A73 5G",
@@ -445,6 +445,54 @@
     "device_avatar": "assets/img/devices/lynx.png",
     "maintainer_avatar": "https://avatars.githubusercontent.com/u/5258054?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/lynx.txt",
+    "build": "user"
+  },
+  "toco": {
+    "status": "active",
+    "maintainer": "fwlhh",
+    "oem": "Xiaomi",
+    "device": "Mi Note 10 Lite",
+    "codename": "toco",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/toco.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/toco.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/toco.json"
+    ],
+    "device_avatar": "assets/img/devices/toco.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/182273315?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/toco.txt",
+    "build": "user"
+  },
+  "pipa": {
+    "status": "active",
+    "maintainer": "Aryan",
+    "oem": "Xiaomi",
+    "device": "Pad 6",
+    "codename": "pipa",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/pipa.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/pipa.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/pipa.json"
+    ],
+    "device_avatar": "assets/img/devices/pipa.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/152459091?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/pipa.txt",
+    "build": "user"
+  },
+  "a71": {
+    "status": "active",
+    "maintainer": "eun0115",
+    "oem": "Samsung",
+    "device": "a71 5G",
+    "codename": "a71",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/a71.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/a71.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/a71.json"
+    ],
+    "device_avatar": "assets/img/devices/a71.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/67692232?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/a71.txt",
     "build": "user"
   }
 }
