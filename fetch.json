@@ -143,6 +143,22 @@
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/dubai.txt",
     "build": "userdebug"
   },
+  "miami": {
+    "status": "active",
+    "oem": "Motorola",
+    "device": "Edge 30 Neo",
+    "codename": "miami",
+    "maintainer": "Rakhshan (shan_rakh)",
+    "urls": [
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/miami.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/miami.json",
+      "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/miami.json"
+    ],
+    "device_avatar": "assets/img/devices/miami.png",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/121305132?v=4",
+    "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/miami.txt",
+    "build": "userdebug"
+  },
   "redwood": {
     "status": "active",
     "oem": "Xiaomi",
