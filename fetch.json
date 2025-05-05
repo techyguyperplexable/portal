@@ -180,16 +180,16 @@
     "oem": "Xiaomi",
     "device": "Redmi Note 12R/Redmi 12 5G/POCO M6 Pro 5G",
     "codename": "sky",
-    "maintainer": "Ashwani",
+    "maintainer": "kAiF",
     "urls": [
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/sky.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/sky.json",
       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/sky.json"
     ],
     "device_avatar": "assets/img/devices/xiaomi-redmi-12r-1.png",
-    "maintainer_avatar": "https://avatars.githubusercontent.com/u/21272055?v=4",
+    "maintainer_avatar": "https://avatars.githubusercontent.com/u/209830895?v=4",
     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/sky.txt",
-    "build": "userdebug"
+    "build": "user"
   },
   "akita": {
     "status": "active",
