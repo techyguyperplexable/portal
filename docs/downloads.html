@@ -1273,12 +1273,6 @@
 
     <div class="main-container">
         <div id="error-container"></div>
-        <div class="disclaimer">
-            <div class="disclaimer-title">Disclaimer:</div>
-            <div class="disclaimer-text">
-                We highly recommend following the official flashing instructions provided by your device maintainer to avoid potential issues. Please note that we are not responsible for any damage, malfunctions, or data loss that may occur. Proceed with caution and at your own risk.
-            </div>
-        </div>
         <div id="variant-selector" class="variant-selector hidden">
             <div class="variant-title">Select Build Variant</div>
             <div id="variant-buttons" class="variant-buttons"></div>
@@ -1310,11 +1304,6 @@
                                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.38-.49 1.05-.75 4.12-1.79 6.87-2.97 8.26-3.54 3.93-1.62 4.75-1.9 5.27-1.91.12 0 .37.03.54.18.14.12.18.28.2.46-.02.06-.02.11-.02.17z"/>
                                         </svg>
                                     </a>
-                                    <a href="#" id="github-link" class="social-link" target="_blank">
-                                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
-                                        </svg>
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1335,8 +1324,12 @@
                             <div class="info-value" id="build-date">-</div>
                         </div>
                         <div class="info-item">
-                                <div class="info-label">File Size</div>
-                                <div class="info-value" id="file-size">-</div>
+                            <div class="info-label">File Size</div>
+                            <div class="info-value" id="file-size">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Downloads</div>
+                            <div class="info-value" id="download-count">-</div>
                         </div>
                     </div>
                     <div class="download-button-container" style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
@@ -1399,6 +1392,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modern Disclaimer Modal -->
+    <div id="disclaimerModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55);">
+      <div style="background:#181c20; color:#fff; max-width:420px; margin:10vh auto; padding:2.5rem 2rem 2rem 2rem; border-radius:22px; box-shadow:0 8px 32px rgba(0,0,0,0.35); position:relative; text-align:center; border:1px solid #222;">
+        <div style="margin-bottom:1.2rem;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><circle cx="12" cy="16" r="1.2"/></svg>
+        </div>
+        <h2 style="color:#f44; margin-bottom:1rem; font-size:1.5rem;">Disclaimer</h2>
+        <p style="font-size:1.1rem; color:#eee; line-height:1.6; margin-bottom:1.5rem;">We highly recommend following the official flashing instructions provided by your device maintainer to avoid potential issues. Please note that we are not responsible for any damage, malfunctions, or data loss that may occur. Proceed with caution and at your own risk.</p>
+        <button class="understand-button" style="background:linear-gradient(45deg, #00ff00, #00cc00); color:#000; border:none; padding:0.8rem 2rem; border-radius:12px; font-size:1.1rem; font-weight:600; cursor:pointer; transition:all 0.3s ease;">I Understand</button>
+      </div>
+    </div>
 
     <script>
         async function loadDeviceData() {
@@ -1467,51 +1472,101 @@
             errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
         }
 
-        function updateDeviceInfo(device) {
+        async function fetchDeviceDownloads(codename, variant, version) {
+            const startDate = '2025-02-01';
+            const today = new Date();
+            const endDate = today.toISOString().split('T')[0];
+            
+            // Only fetch 7.x if the version starts with 7
+            const versionPrefix = version.startsWith('7') ? '7.x' : '6.x';
+            const url = `https://sourceforge.net/projects/risingos-revived/files/${versionPrefix}/${variant.toUpperCase()}/${codename}/stats/json?start_date=${startDate}&end_date=${endDate}`;
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    mode: 'cors'
+                });
+
+                if (!response.ok) {
+                    console.log(`No stats available for ${codename} (${versionPrefix})`);
+                    return 0;
+                }
+                
+                const data = await response.json();
+                let total = 0;
+                
+                if (data && typeof data === 'object') {
+                    // Sum up all download counts
+                    total = Object.values(data).reduce((sum, value) => {
+                        const count = Number(value);
+                        return sum + (isNaN(count) ? 0 : count);
+                    }, 0);
+                }
+                
+                // Debug logging
+                console.log(`URL for ${codename} (${versionPrefix}):`, url);
+                console.log(`Raw response for ${codename} (${versionPrefix}):`, data);
+                console.log(`Total downloads for ${codename} (${versionPrefix}):`, total);
+                
+                return total;
+            } catch (error) {
+                console.error(`Error fetching downloads for ${codename} (${versionPrefix}):`, error);
+                return 0;
+            }
+        }
+
+        async function updateDeviceInfo(device) {
             const elements = document.querySelectorAll('.info-value, .codename-text, .device-brand');
             elements.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(10px)';
             });
 
-            setTimeout(() => {
-                document.getElementById('device-codename').textContent = device.codename;
-                document.getElementById('device-brand').textContent = device.oem;
-                document.getElementById('device-name').textContent = device.device;
-                document.getElementById('android-version').textContent = device.version;
-                document.getElementById('build-type').textContent = "userdebug";
-                document.getElementById('build-date').textContent = new Date(device.timestamp * 1000).toLocaleDateString("en-US", {
-                    month: "short",  // "Feb"
-                    day: "numeric",  // "14"
-                    year: "numeric"  // "2025"
-                });
-                document.getElementById('file-size').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
-                document.getElementById('download-link').href = device.download;
-                document.getElementById('guide-link').href = `https://github.com/RisingOS-Revived/official_devices/tree/fifteen/OTA/guide/${device.codename}.md`;
-                document.getElementById('device-changelog').href = `https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/${device.codename}.txt`;
-                document.getElementById('previous-builds').href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${device.variant.toUpperCase()}/${device.codename}`;
-                document.getElementById('recovery-link').href = device.recovery;
-                document.getElementById('paypal-link').href = device.paypal;
-                document.getElementById('maintainer').textContent = device.maintainer;
-                document.getElementById('maintainer-image').src = device.maintainer_avatar;
-
-                // Animate elements back in
-                elements.forEach((el, index) => {
-                    setTimeout(() => {
-                        el.style.transition = 'all 0.3s ease';
-                        el.style.opacity = '1';
-                        el.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
-
-                // Update social links
-                const telegramLink = document.getElementById('telegram-link');
-                const githubLink = document.getElementById('github-link');
+            try {
+                // Fetch download count with device version
+                const downloadCount = await fetchDeviceDownloads(device.codename, device.variant, device.version);
                 
-                // Set the links
-                telegramLink.href = `https://t.me/RisingOS${device.codename}`; // Adjust the URL pattern as needed
-                githubLink.href = `https://github.com/RisingOS-Revived/official_devices/tree/fifteen/OTA/${device.codename}`; // Adjust the URL pattern as needed
-            }, 300);
+                setTimeout(() => {
+                    document.getElementById('device-codename').textContent = device.codename;
+                    document.getElementById('device-brand').textContent = device.oem;
+                    document.getElementById('device-name').textContent = device.device;
+                    document.getElementById('android-version').textContent = device.version;
+                    document.getElementById('build-type').textContent = "userdebug";
+                    document.getElementById('build-date').textContent = new Date(device.timestamp * 1000).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    });
+                    document.getElementById('file-size').textContent = (device.filesize >= 1073741824 ? (device.filesize / (1024 * 1024 * 1024)).toFixed(2) + ' GB' : (device.filesize / (1024 * 1024)).toFixed(2) + ' MB');
+                    document.getElementById('download-count').textContent = downloadCount.toLocaleString();
+                    document.getElementById('download-link').href = device.download;
+                    document.getElementById('guide-link').href = `https://github.com/RisingOS-Revived/official_devices/tree/fifteen/OTA/guide/${device.codename}.md`;
+                    document.getElementById('device-changelog').href = `https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/${device.codename}.txt`;
+                    document.getElementById('previous-builds').href = `https://sourceforge.net/projects/risingos-revived/files/6.x/${device.variant.toUpperCase()}/${device.codename}`;
+                    document.getElementById('recovery-link').href = device.recovery;
+                    document.getElementById('paypal-link').href = device.paypal;
+                    document.getElementById('maintainer').textContent = device.maintainer;
+                    document.getElementById('maintainer-image').src = device.maintainer_avatar;
+
+                    // Animate elements back in
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.style.transition = 'all 0.3s ease';
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+
+                    // Update social links
+                    const telegramLink = document.getElementById('telegram-link');
+                    telegramLink.href = device.telegram;
+                }, 300);
+            } catch (error) {
+                console.error('Error updating device info:', error);
+            }
         }
 
         // Initialize
@@ -1559,6 +1614,25 @@
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
+
+        // Show disclaimer modal on every page load
+        window.onload = function() {
+            document.getElementById('disclaimerModal').style.display = 'block';
+        };
+
+        // Close modal when clicking the understand button
+        if(document.querySelector('.understand-button')) {
+          document.querySelector('.understand-button').onclick = function() {
+              document.getElementById('disclaimerModal').style.display = 'none';
+          }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('disclaimerModal')) {
+                document.getElementById('disclaimerModal').style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>

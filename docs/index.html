@@ -432,7 +432,7 @@
          </div>
        </div><br><br>
        <div class="downloads-container">
-         <!--<h3>Total Downloads</h3>-->
+         <h3 style="color: #f8f9fa; margin-bottom: 10px; font-size: 1.2em;">Total Downloads</h3>
          <p id="totalDownloads" class="downloads-value">Loading...</p>
        </div><br>
        <div class="badge-container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 20px;">
@@ -539,7 +539,6 @@
       <p>RisingOS Revived is one of the most exciting custom ROMs available today, blending performance, customization, and stability. Designed for users who crave more control over their devices, RisingOS offers a sleek user interface, enhanced features, and the latest Android improvements, all while maintaining rock-solid reliability. Whether you're a power user or someone seeking a refined Android experience, RisingOS Revived pushes the boundaries of what your device can do.</p>
       <div class="social-links d-flex justify-content-center">
         <a href="https://t.me/RisingOSRevived"><i class="bi bi-telegram"></i></a>
-        <a href="https://github.com/RisingOS-Revived"><i class="bi bi-github"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
@@ -621,7 +620,6 @@
         toggleIcon.classList.remove('bi-chevron-down');
         toggleIcon.classList.add('bi-chevron-up');
         toggleText.textContent = 'Hide Graphs';
-        setTimeout(initializeCharts, 50);
     }
 
     function hideGraphs() {
@@ -865,6 +863,51 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
     });
 });
+</script>
+
+<script>
+function fetchData() {
+    const startDate = '2025-02-01';
+    // Get current date in YYYY-MM-DD format
+    const today = new Date();
+    const endDate = today.toISOString().split('T')[0];
+    
+    const sixXUrl = `https://sourceforge.net/projects/risingos-revived/files/6.x/stats/json?start_date=${startDate}&end_date=${endDate}`;
+    const sevenXUrl = `https://sourceforge.net/projects/risingos-revived/files/7.x/stats/json?start_date=${startDate}&end_date=${endDate}`;
+
+    Promise.all([
+        fetch(sixXUrl).then(response => response.json()),
+        fetch(sevenXUrl).then(response => response.json())
+    ])
+    .then(([sixXData, sevenXData]) => {
+        let total = 0;
+        
+        // Parse and sum up downloads from 6.x
+        if (sixXData && typeof sixXData === 'object') {
+            const sixXTotal = Object.values(sixXData).reduce((sum, value) => {
+                return sum + (typeof value === 'number' ? value : 0);
+            }, 0);
+            total += sixXTotal;
+            console.log('6.x downloads:', sixXTotal); // Debug log
+        }
+        
+        // Parse and sum up downloads from 7.x
+        if (sevenXData && typeof sevenXData === 'object') {
+            const sevenXTotal = Object.values(sevenXData).reduce((sum, value) => {
+                return sum + (typeof value === 'number' ? value : 0);
+            }, 0);
+            total += sevenXTotal;
+            console.log('7.x downloads:', sevenXTotal); // Debug log
+        }
+        
+        console.log('Total downloads:', total); // Debug log
+        document.getElementById('totalDownloads').textContent = total.toLocaleString();
+    })
+    .catch(error => {
+        console.error('Error fetching download stats:', error);
+        document.getElementById('totalDownloads').textContent = 'N/A';
+    });
+}
 </script>
 
 </body>
