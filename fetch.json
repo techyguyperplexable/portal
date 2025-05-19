@@ -590,5 +590,21 @@
      "maintainer_avatar": "https://avatars.githubusercontent.com/u/53379692?v=4",
      "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/stone.txt",
      "build": "userdebug"
+  },
+   "bluejay": {
+     "status": "active",
+     "maintainer": "objecting_",
+     "oem": "Google",
+     "device": "Pixel 6a",
+     "codename": "bluejay",
+     "urls": [
+       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/bluejay.json",
+       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/bluejay.json",
+       "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/GAPPS/bluejay.json"
+     ],
+     "device_avatar": "assets/img/devices/bluejay.png",
+     "maintainer_avatar": "https://avatars.githubusercontent.com/u/154611145?v=4",
+     "device_changelog": "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/changelogs/bluejay.txt",
+     "build": "userdebug"
   }
 }
