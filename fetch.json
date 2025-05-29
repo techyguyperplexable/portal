@@ -628,7 +628,7 @@
      "maintainer": "objecting_",
      "oem": "Samsung",
      "device": "Galaxy Tab S6 Lite (WiFi)",
-     "codename": "gta4xl",
+     "codename": "gta4xlwifi",
      "urls": [
        "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/VANILLA/gta4xlwifi.json",
        "https://raw.githubusercontent.com/RisingOS-Revived/official_devices/refs/heads/fifteen/OTA/device/CORE/gta4xlwifi.json",
